@@ -37,21 +37,21 @@
             buttons: [
                 {
                     text: '<i class="fas fa-lg fa-fw m-r-10 fa-plus"></i> CREAR CLIENTE',
-                    className: 'btn btn-sm pl-btn-primary',
+                    className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                         alert( 'Button activated' );
                     }
                 },
                 {
                     text: '<i class="fas fa-lg fa-fw m-r-10 fa-plus"></i> CREAR PROCEDIMIENTO',
-                    className: 'btn btn-sm pl-btn-primary',
+                    className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                         alert( 'Button activated' );
                     }
                 },
                 {
                     text: '<i class="fas fa-file-excel fa-fw"></i> EXPORTAR EXCEL',
-                    className: 'btn btn-sm pl-btn-primary',
+                    className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                         alert( 'Button activated' );
                     }

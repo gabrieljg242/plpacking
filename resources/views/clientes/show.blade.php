@@ -15,7 +15,7 @@ $breadcrumbs = array(
 @section('pageHeader','Detalle Datos CLiente')
 
 @section('content')
-<div class="container-fluid spark-screen">
+<div class="spark-screen">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-inverse">

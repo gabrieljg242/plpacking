@@ -44,6 +44,16 @@
 	background: #1ba258!important;
 }
 
+.pl-btn-secondary{
+	background: #6c757d!important;
+	color: #FFF!important;
+}
+
+.pl-btn-secondary:hover{
+	background-color: #5a6268!important;
+    border-color: #545b62;
+}
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -15472,8 +15482,9 @@ a:focus {
 }
 
 .header .navbar-brand img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 38px;
+    max-height: 100%;
+    margin-right: 5px;
 }
 
 .header .navbar-brand b {
@@ -23011,7 +23022,7 @@ hr {
 }
 
 .logo-container img{
-    width: 120px;
+    width: 200px;
 }
 
 .login.login-v2 .login-header {
@@ -44295,3 +44306,18 @@ body ul.wysihtml5-toolbar .glyphicon.glyphicon-picture:before {
   width: 600px !important;
 }
 
+
+@media screen and (max-width: 768px) {
+	.logo-container img {
+    	width: 200px;
+	}
+
+	.header .navbar-brand img {
+	  max-width: 100%;
+	  max-height: 100%;
+	}
+
+	.header.navbar-default .navbar-brand{
+		justify-content: left;
+	}
+}

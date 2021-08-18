@@ -19,11 +19,8 @@
 
 		<!-- begin brand -->
 		<div class="login-header">
-			<div class="brand">
-				<span class="logo"></span> <b>{{ config('app.name', 'Laravel') }}</b> Admin
-			</div>
-			<div class="icon">
-				<i class="fa fa-lock"></i>
+			<div class="brand text-center">
+				Admin
 			</div>
 		</div>
 		<!-- end brand -->

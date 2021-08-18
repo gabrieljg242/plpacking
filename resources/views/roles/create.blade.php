@@ -15,7 +15,7 @@
 @section('pageHeader', 'Detalle de Roles')
 
 @section('content')
-<div class="container-fluid spark-screen">
+<div class="spark-screen">
     <div class="row">
         <div class="col-md-12">
 
