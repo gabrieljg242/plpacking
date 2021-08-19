@@ -38,7 +38,7 @@
 											'<i class="fa fa-plus"></i> Nuevo Permiso',
 												[
 													'type' => 'submit',
-													'class' => 'btn btn-success btn-sm',
+													'class' => 'btn pl-btn-secondary btn-sm',
 													'data-toggle' => 'tooltip',
 													'title' => 'Nuevo'
 												]

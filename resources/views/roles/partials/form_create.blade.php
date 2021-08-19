@@ -53,7 +53,7 @@
                         '<i class="fa fa-save"></i> Guardar',
                             [
                                 'type' => 'submit',
-                                'class' => 'btn btn-info btn-sm',
+                                'class' => 'btn pl-btn-secondary btn-sm',
                                 'data-toggle' => 'tooltip',
                                 'title' => 'Guardar'
                             ]
@@ -63,7 +63,7 @@
                             [
                                 'onclick'=>'history.back()',
                                 'type' => 'reset',
-                                'class' => 'btn btn-info btn-sm',
+                                'class' => 'btn pl-btn-secondary btn-sm',
                                 'data-toggle' => 'tooltip',
                                 'title' => 'Cancelar'
                             ]
@@ -72,7 +72,7 @@
                         'Limpiar',
                         [
                         'type' => 'reset',
-                        'class' => 'btn btn-info btn-sm',
+                        'class' => 'btn pl-btn-secondary btn-sm',
                         'data-toggle' => 'tooltip',
                         'title' => 'Limpiar'
                         ]

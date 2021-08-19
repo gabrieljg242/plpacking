@@ -44307,6 +44307,33 @@ body ul.wysihtml5-toolbar .glyphicon.glyphicon-picture:before {
 }
 
 
+/** Custom */
+
+table.dataTable>tbody>tr.child ul.dtr-details{
+	width: 100%;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    top: 50%!Important;
+    left: 5px!Important;
+    height: 1em!Important;
+    width: 1em!Important;
+    margin-top: -9px!Important;
+    display: block!Important;
+    position: absolute!Important;
+    color: white!Important;
+    border: .15em solid white!Important;
+    border-radius: 1em!Important;
+    box-shadow: 0 0 0.2em #444!Important;
+    box-sizing: content-box!Important;
+    text-align: center!Important;
+    text-indent: 0 !important!Important;
+    font-family: "Courier New",Courier,monospace!Important;
+    line-height: 1em!Important;
+    content: "+";
+    background-color: #31b131!Important;
+}
+
 @media screen and (max-width: 768px) {
 	.logo-container img {
     	width: 200px;

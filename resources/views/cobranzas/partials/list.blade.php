@@ -1,7 +1,9 @@
 @push('css')
 <link href="{{ url('/assets/plugins/DataTable/datatables.min.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ url('/assets/plugins/DataTable/responsive.dataTables.min.css') }}" rel="stylesheet" type="text/css">
+
 @endpush
-<table class="table table-bordered">
+<table class="table table-bordered data-table display responsive nowrap" style="width:100%">
     <thead class="text-center bg-secondary text-white">
         <th width="10%">Item</th>
         <th width="25%">Razón Social</th>
@@ -30,6 +32,8 @@
 
 @push('scripts')
 <script src="{{ url('/assets/plugins/DataTable/datatables.min.js') }}"></script>
+<script src="{{ url('/assets/plugins/DataTable/dataTables.responsive.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         var table = $('.data-table').DataTable( {

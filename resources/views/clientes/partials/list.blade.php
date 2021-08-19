@@ -1,8 +1,10 @@
 @push('css')
 <link href="{{ url('/assets/plugins/DataTable/datatables.min.css') }}" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"/>
+<link href="{{ url('/assets/plugins/DataTable/responsive.dataTables.min.css') }}" rel="stylesheet" type="text/css">
+
 @endpush
-<table class="table table-bordered data-table table-hover">
+<table class="table table-bordered data-table table-hover display responsive nowrap" style="width:100%">
     <thead>
         <th width="5%">Item</th>
         <th width="25%">Razón Social</th>
@@ -30,6 +32,8 @@
 @push('scripts')
 <script src="{{ url('/assets/plugins/DataTable/datatables.min.js') }}"></script>
 <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script src="{{ url('/assets/plugins/DataTable/dataTables.responsive.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         var table = $('.data-table').DataTable( {
