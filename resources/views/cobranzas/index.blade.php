@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-	<div class="spark-screen">
+	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-12">
 
@@ -81,7 +81,7 @@
 										<input class="form-control" placeholder="Escribir nombre cliente">
 									</div>
 									<div class="col-md-2">
-										<button class="btn pl-btn-secondary"><i class="fas fa-search fa-fw"></i> Buscar</button>
+										<button class="btn btn-info"><i class="fas fa-search fa-fw"></i> Buscar</button>
 									</div>
 								</div>
 							</div>
@@ -97,7 +97,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-right mb-2">
-					<button class="btn pl-btn-secondary"><i class="fas fa-file-excel fa-fw"></i> Exportar EXCEL</button>
+					<button class="btn btn-success"><i class="fas fa-file-excel fa-fw"></i> Exportar EXCEL</button>
 				</div>
 				<div class="panel panel">
 			        <!-- begin panel-heading -->

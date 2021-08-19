@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-	<div class="spark-screen">
+	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-12">
 

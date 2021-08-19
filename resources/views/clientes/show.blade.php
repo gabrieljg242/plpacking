@@ -15,7 +15,7 @@ $breadcrumbs = array(
 @section('pageHeader','Detalle Datos CLiente')
 
 @section('content')
-<div class="spark-screen">
+<div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-inverse">
@@ -31,7 +31,7 @@ $breadcrumbs = array(
                 <div class="panel-body">
                     <div class="row mt-2 mb-3">
                         <div class="col-md-12 text-right">
-                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn pl-btn-secondary btn-sm ml-2">Historial procesamientos</i></a>
+                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn btn-success btn-sm ml-2">Historial procesamientos</i></a>
                         </div>
                     </div>
                     <legend class="m-b-15">Datos del Cliente</legend>
@@ -127,9 +127,9 @@ $breadcrumbs = array(
 
                     <div class="row mt-2 mb-3">
                         <div class="col-md-12 text-center">
-                            <button class="btn pl-btn-secondary btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
-                           <a href="{{ route('clientes.index') }}" class="btn pl-btn-secondary btn-sm ml-2">Cancelar</a>
-                            <button class="btn pl-btn-secondary btn-sm ml-2">Limpiar</button>
+                            <button class="btn btn-info btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
+                           <a href="{{ route('clientes.index') }}" class="btn btn-info btn-sm ml-2">Cancelar</a>
+                            <button class="btn btn-info btn-sm ml-2">Limpiar</button>
                         </div>
                     </div>
 
