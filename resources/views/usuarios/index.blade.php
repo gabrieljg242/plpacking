@@ -14,7 +14,7 @@
 @section('pageHeader', 'Módulo de Usuarios')
 
 @section('content')
-	<div class="container-fluid spark-screen">
+	<div class="spark-screen">
 		<div class="row">
 			<div class="col-md-12">
 
@@ -38,7 +38,7 @@
 											'<i class="fa fa-plus"></i> Nuevo Usuario',
 												[
 													'type' => 'submit',
-													'class' => 'btn btn-success btn-sm',
+													'class' => 'btn pl-btn-secondary btn-sm',
 													'data-toggle' => 'tooltip',
 													'title' => 'Nuevo'
 												]

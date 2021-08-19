@@ -5,7 +5,7 @@
 @section('pageHeader','Cobranza')
 
 @section('content')
-<div class="container-fluid spark-screen">
+<div class="spark-screen">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-inverse">
@@ -39,7 +39,7 @@
                            </div>
                         </div>
                         <div class="col-md-3 text-right">
-                            <a href="{{ route('cobranzas.index') }}" class="btn btn-success btn-sm ml-2"><i class="fas fa-angle-left fa-fw"></i> Regresar</a>
+                            <a href="{{ route('cobranzas.index') }}" class="btn pl-btn-secondary btn-sm ml-2"><i class="fas fa-angle-left fa-fw"></i> Regresar</a>
                         </div>
                     </div>
                     <h4>Datos de Factura</h4>
@@ -158,9 +158,9 @@
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <button class="btn btn-info btn-sm">Ver</button>
-                            <button class="btn btn-info btn-sm ml-1">Subir</button>
-                            <button class="btn btn-info btn-sm ml-1">Eliminar</button>
+                            <button class="btn pl-btn-secondary btn-sm">Ver</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Subir</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Eliminar</button>
                         </div>
                     </div>
                     <div class="row">
@@ -178,9 +178,9 @@
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <button class="btn btn-info btn-sm">Ver</button>
-                            <button class="btn btn-info btn-sm ml-1">Subir</button>
-                            <button class="btn btn-info btn-sm ml-1">Eliminar</button>
+                            <button class="btn pl-btn-secondary btn-sm">Ver</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Subir</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Eliminar</button>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -205,9 +205,9 @@
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <button class="btn btn-info btn-sm">Ver</button>
-                            <button class="btn btn-info btn-sm ml-1">Subir</button>
-                            <button class="btn btn-info btn-sm ml-1">Eliminar</button>
+                            <button class="btn pl-btn-secondary btn-sm">Ver</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Subir</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Eliminar</button>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -225,9 +225,9 @@
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <button class="btn btn-info btn-sm">Ver</button>
-                            <button class="btn btn-info btn-sm ml-1">Subir</button>
-                            <button class="btn btn-info btn-sm ml-1">Eliminar</button>
+                            <button class="btn pl-btn-secondary btn-sm">Ver</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Subir</button>
+                            <button class="btn pl-btn-secondary btn-sm ml-1">Eliminar</button>
                         </div>
                     </div>
                     <div class="row">
