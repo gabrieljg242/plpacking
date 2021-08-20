@@ -30,10 +30,10 @@
 
 			        <div class="panel-body">
 			        	@include('includes.component.message')
-			   
+
 			        	@can('role.create')
 			        		<div class="row mb-3">
-			        	 		<div class="col-md-12 text-right">
+			        	 		<div class="col-md-12 text-right text-sm-center">
 									<a href="{{ url('roles/create') }}">
 										{{ Form::button(
 											'<i class="fa fa-plus"></i> Nuevo Rol',
