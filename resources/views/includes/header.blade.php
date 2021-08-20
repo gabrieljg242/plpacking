@@ -15,7 +15,7 @@
 			<span class="icon-bar"></span>
 		</button>
 		@endif
-		<a href="{{ route('home') }}" class="navbar-brand">
+		<a href="{{ url('/') }}" class="navbar-brand">
 			<img src="{{ url('assets/img/logo-2.png') }}" alt="">
 			<b>PACKING & LOGISTICS</b>
 		</a>

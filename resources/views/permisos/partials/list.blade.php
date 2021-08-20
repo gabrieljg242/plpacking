@@ -4,7 +4,7 @@
 
 @endpush
 <table class="table table-bordered data-table display responsive nowrap" style="width:100%">
-    <thead>
+    <thead class="text-center bg-secondary text-white">
         <th width="10%">ID</th>
         <th width="25%">Permiso</th>
         <th width="25%">Descripción</th>

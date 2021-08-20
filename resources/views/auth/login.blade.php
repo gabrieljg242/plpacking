@@ -19,12 +19,10 @@
 
 		<!-- begin brand -->
 		<div class="login-header">
-			<div class="brand">
-				<span class="logo"></span> <b>{{ config('app.name', 'Laravel') }}</b> Admin
+			<div class="brand text-center">
+				Acceso a Intranet
 			</div>
-			<div class="icon">
-				<i class="fa fa-lock"></i>
-			</div>
+			
 		</div>
 		<!-- end brand -->
 		<!-- begin login-content -->
@@ -64,13 +62,6 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-				</div>
-				<div class="checkbox checkbox-css m-b-20">
-					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-					<label for="remember_checkbox">
-						Recuérdame
-					</label>
 				</div>
 				<div class="login-buttons">
 					<button type="submit" class="btn pl-btn-primary btn-block btn-lg">Ingresar</button>

@@ -5,17 +5,16 @@
 $breadcrumbs = array(
     '0' => array('nombre' => 'Inicio', 'link' => '/' , 'active' => ''),
     '1' => array('nombre' => 'Módulo de Clientes', 'link' => 'clientes' , 'active' => ''),
-    '2' => array('nombre' => 'Detalle Datos CLiente', 'link' => '' , 'active' => true)
+    '2' => array('nombre' => 'Detalle Datos Cliente', 'link' => '' , 'active' => true)
 );
 
 @endphp
 
-@section('title', 'Detalle Datos CLiente')
+@section('title', 'Detalle Datos Cliente')
 
-@section('pageHeader','Detalle Datos CLiente')
+@section('pageHeader','Detalle Datos Cliente')
 
 @section('content')
-<div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-inverse">
@@ -30,8 +29,8 @@ $breadcrumbs = array(
 
                 <div class="panel-body">
                     <div class="row mt-2 mb-3">
-                        <div class="col-md-12 text-right">
-                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn btn-success btn-sm ml-2">Historial procesamientos</i></a>
+                        <div class="col-md-12 text-right text-sm-center">
+                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn pl-btn-secondary btn-sm ml-2">Historial procesamientos</i></a>
                         </div>
                     </div>
                     <legend class="m-b-15">Datos del Cliente</legend>
@@ -97,7 +96,7 @@ $breadcrumbs = array(
                         </div>
                         
                     </div>
-                    <h4 class="mt-4">Datos de Contacto</h4>		
+                    <legend class="mt-4">Datos de Contacto</legend>		
                     <div class="row">
                         <div class="col-md-4 mb-2">
                             <label>Nombre de Contacto</label>
@@ -127,9 +126,9 @@ $breadcrumbs = array(
 
                     <div class="row mt-2 mb-3">
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-info btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
-                           <a href="{{ route('clientes.index') }}" class="btn btn-info btn-sm ml-2">Cancelar</a>
-                            <button class="btn btn-info btn-sm ml-2">Limpiar</button>
+                            <button class="btn pl-btn-secondary btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
+                           <a href="{{ route('clientes.index') }}" class="btn pl-btn-secondary btn-sm ml-2">Cancelar</a>
+                            <button class="btn pl-btn-secondary btn-sm ml-2">Limpiar</button>
                         </div>
                     </div>
 
@@ -140,6 +139,5 @@ $breadcrumbs = array(
 
         </div>
     </div>
-</div>  
     
 @endsection

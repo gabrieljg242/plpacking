@@ -19,7 +19,6 @@
 @endpush
 
 @section('content')
-	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-inverse">
@@ -33,10 +32,6 @@
 			        </div>
 
 			        <div class="panel-body">
-						<div class="row mb-5">
-							<h5>Datos de búsqueda</h5>
-						</div>
-
 						<div class="row">
 							<div class="col-md-12">
 								@include('includes.component.message')
@@ -51,7 +46,6 @@
 
 			</div>
 		</div>
-	</div>
 @endsection
 
 @push('scripts')

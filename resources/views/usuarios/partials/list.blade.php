@@ -3,7 +3,7 @@
     <link href="{{ url('/assets/plugins/DataTable/responsive.dataTables.min.css') }}" rel="stylesheet" type="text/css">
 @endpush
 <table class="table table-bordered data-table display responsive nowrap" style="width:100%">
-    <thead>
+    <thead class="text-center bg-secondary text-white">
         <th width="10%">Item</th>
         <th width="20%">Nombre y apellido</th>
         <th width="20%">Tipo usuario</th>

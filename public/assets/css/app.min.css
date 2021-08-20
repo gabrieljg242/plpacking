@@ -596,7 +596,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 1.125rem;
+  font-size: 24px;
 }
 
 h5,
@@ -44334,6 +44334,10 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, table.dataT
     background-color: #31b131!Important;
 }
 
+.panel-body legend{
+	font-size: 22px;
+}
+
 @media screen and (max-width: 768px) {
 	.logo-container img {
     	width: 200px;
@@ -44350,5 +44354,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, table.dataT
 
 	.text-sm-center{
 		text-align: center!important;
+	}
+
+	.sm-hide{
+		display: none!important;
 	}
 }

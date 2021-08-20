@@ -10,9 +10,16 @@
 		<ul class="nav">
 			<li class="nav-profile">
 				<div class="cover with-shadow"></div>
-				<div class="image image-icon bg-black text-grey-darker">
-					<i class="fa fa-user"></i>
-				</div>
+                @if(!empty(Auth::user()->profile_picture))
+                    <div class="image image-icon bg-black text-grey-darker">
+                        <img src="{{ asset('storage/'.Auth::user()->profile_picture) }}" class="img-responsive" alt="">
+                    </div>
+                @else
+                    <div class="image image-icon bg-black text-grey-darker">
+                        <i class="fa fa-user"></i>
+                    </div>
+                @endif
+				
 				<div class="info">
 					<b class="caret pull-right hide"></b>
 					{{ Auth::user()->name }}
