@@ -17,7 +17,8 @@
                 </div>
 
                 <div class="panel-body">
-                    {!! Form::model($user,['route' => ['usuarios.profile.update',encrypt($user->id)] ,'method' => 'PUT', 'id' => 'form']) !!}
+                    @include('includes.component.message')
+                    {!! Form::model($user,['route' => ['usuarios.profile.update',encrypt($user->id)] , 'enctype' => 'multipart/form-data' ,'method' => 'PUT', 'id' => 'form']) !!}
                         @include('user.partials.form')
                     {!! Form::close() !!}
                 </div>

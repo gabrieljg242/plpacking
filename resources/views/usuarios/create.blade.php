@@ -30,6 +30,7 @@
                 </div>
 
                 <div class="panel-body">
+                    @include('includes.component.message')
                     <legend class="m-b-15">Datos Personales</legend>
                     @include('usuarios.partials.form_create')
                 </div>

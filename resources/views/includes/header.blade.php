@@ -55,7 +55,7 @@
 	@includeWhen($headerMegaMenu, 'includes.header-mega-menu')
 	
 	<!-- begin header-nav -->
-	<ul class="navbar-nav navbar-right">
+	<ul class="navbar-nav navbar-right pr-5">
 		<li class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle f-s-14">
 				<i class="fa fa-bell"></i>
@@ -86,9 +86,17 @@
 		@endisset
 		<li class="dropdown navbar-user">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<div class="image image-icon bg-black text-grey-darker">
-					<i class="fa fa-user"></i>
-				</div>
+
+				@if(!empty(Auth::user()->profile_picture))
+					<div class="image-profile-header">
+						<img src="{{ asset('storage/'.Auth::user()->profile_picture) }}" class="img-responsive" alt="">
+					</div>
+				@else
+					<div class="image image-icon bg-black text-grey-darker">
+						<i class="fa fa-user"></i>
+					</div>
+				@endif
+
 				<span class="d-none d-md-inline">{{ Auth::user()->name }}</span> <b class="caret"></b>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right">

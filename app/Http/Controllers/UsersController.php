@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Area;
 use App\Cargo;
@@ -39,12 +40,16 @@ class UsersController extends Controller
             'password.required' => 'La Contraseña es requerida.',
         ]);
 
-        $usuario = User::create($request->all());
+        $usuario = User::create($request->except(['profile_picture']));
         $usuario->password = bcrypt($request->password);
 
         if ($usuario->save()) {
-          // asignar el rol
           $usuario->assignRole($request->rol);
+
+          if ($request->hasFile('profile_picture')) {
+                $usuario->profile_picture = Storage::disk('public')->put('profile_usuario', $request->file('profile_picture'));
+                $usuario->save();
+            }
 
           return redirect('/usuarios')->with('message', __('panel.dataSaved'));
         }
@@ -79,12 +84,20 @@ class UsersController extends Controller
             'username.required' => 'El Nombre de usuario es requerido.',
             'username.unique' => 'El Nombre de usuario ya se encuentra registrado.'
         ]);
-        $usuario->update($request->except(['password']));
+
+        $usuario->update($request->except(['password','profile_picture']));
+        $usuario->syncRoles([$request->rol]);
+        $usuario->save();
+
         if ($request->password != null) {
             $usuario->password = bcrypt($request->password);
         }
-        $usuario->syncRoles([$request->rol]);
-        $usuario->save();
+
+        if ($request->hasFile('profile_picture')) {
+            @unlink('storage/'.$usuario->profile_picture);
+            $usuario->profile_picture = Storage::disk('public')->put('profile_usuario', $request->file('profile_picture'));
+            $usuario->save();
+        }
 
         return redirect('/usuarios')->with('message', __('panel.dataSaved'));
     }
@@ -125,11 +138,20 @@ class UsersController extends Controller
             'username.required' => 'El Nombre de usuario es requerido.',
             'username.unique' => 'El Nombre de usuario ya se encuentra registrado.'
         ]);
-        $usuario->update($request->except(['password']));
+
+        $usuario->update($request->except(['password','profile_picture']));
+
         if ($request->password != null) {
             $usuario->password = bcrypt($request->password);
         }
+
         $usuario->save();
+
+        if ($request->hasFile('profile_picture')) {
+            @unlink('storage/'.$usuario->profile_picture);
+            $usuario->profile_picture = Storage::disk('public')->put('profile_usuario', $request->file('profile_picture'));
+            $usuario->save();
+        }
 
         return redirect()->back()->with('message','Datos guardados con exito.');
     }

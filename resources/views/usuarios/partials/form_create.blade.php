@@ -1,5 +1,13 @@
-{!! Form::open(['method'=>'POST', 'url' => 'usuarios', 'id' => 'form']) !!}
+{!! Form::open(['method'=>'POST', 'enctype' => 'multipart/form-data', 'url' => 'usuarios', 'id' => 'form']) !!}
 {{ Form::token() }}
+<div class="row mb-4">
+  <div class="col-md-5"></div>
+  <div class="col-md-2">
+        <div class="box-body box-profile">
+          <div id="imagePreview"></div>
+        </div>
+    </div>
+</div>
 <div class="row">
   <div class="col-md-4">
     <div class="row">
@@ -78,19 +86,13 @@
    </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
    <div class="form-group">
        {!! Form::label('password', '* Contraseña') !!}
        {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Contraseña...', 'required' => 'required','data-toggle' => 'password', 'data-placement' => 'before', 'autocomplete' => 'false']) !!}
    </div>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="form-group">
-        {!! Form::label('password', '* Repita Contraseña') !!}
-        <input type="password" data-toggle="password" data-placement="before" class="form-control" type="Contraseña" placeholder="Contraseña" data-rule-equalTo="#password" autocomplete="false"/>
-    </div>
-</div>
+
+@include('usuarios.partials.image')
 
 </div>
 </div>
@@ -131,7 +133,7 @@
     {!! Form::close() !!}
 
     @push('scripts')
-    <!-- <script src="{{ url('assets/plugins/bootstrap-show-password/dist/bootstrap-show-password.js') }}"></script> -->
+    <script src="{{ url('assets/plugins/bootstrap-show-password/dist/bootstrap-show-password.js') }}"></script>
 
     <script>
         $('#form').validate()

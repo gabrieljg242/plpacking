@@ -29,7 +29,8 @@
 			        </div>
 
 			        <div class="panel-body">
-
+			        	@include('includes.component.message')
+			        	
 			        	@can('permission.create')
 			        		<div class="row mb-3">
 			        	 		<div class="col-md-12 text-right">

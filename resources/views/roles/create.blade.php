@@ -30,6 +30,7 @@
                 </div>
 
                 <div class="panel-body">
+                    @include('includes.component.message')
                     @include('roles.partials.form_create')
                 </div>
                 <!-- /.box-body -->

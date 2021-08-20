@@ -39,6 +39,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
+								@include('includes.component.message')
 								@include('clientes.partials.list')
 							</div>
 						</div>	

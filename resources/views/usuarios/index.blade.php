@@ -30,7 +30,9 @@
 
 			        <div class="panel-body">
 
-			        	 @can('user.create')
+			        	@include('includes.component.message')
+
+			        	@can('user.create')
 			        	 	<div class="row mb-3">
 			        	 		<div class="col-md-12 text-right">
 			        	 			<a href="{{ url('usuarios/create') }}">

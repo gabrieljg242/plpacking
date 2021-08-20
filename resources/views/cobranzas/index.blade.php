@@ -109,6 +109,7 @@
 			        </div>
 
 			        <div class="panel-body">
+			        	@include('includes.component.message')
 						@include('cobranzas.partials.list')
 					</div>
 					<!-- /.box-body -->
