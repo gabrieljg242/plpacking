@@ -41,10 +41,9 @@
 			        @endif
 				</div>
 			</div>
+
 			<form method="POST" action="{{ route('login') }}" class="margin-bottom-0">
-
-
-			@csrf
+				@csrf
 				<div class="form-group m-b-20">
 					<input id="username" type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required placeholder ="Usuario" autofocus>
 
@@ -67,7 +66,7 @@
 					<button type="submit" class="btn pl-btn-primary btn-block btn-lg">Ingresar</button>
 				</div>
 				<div class="m-t-20">
-					Olvido de contraseña. Hacer click <a href="javascript:;">aquí</a>.
+					Olvido de contraseña. Hacer click <a href="{{ route('forget.password.get') }}">aquí</a>.
 				</div>
 			</form>
 		</div>
