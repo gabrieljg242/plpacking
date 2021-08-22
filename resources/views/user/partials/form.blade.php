@@ -29,14 +29,15 @@
 			{!! Form::text('username', null, ['class'=>'form-control', 'value'=>'{{ $user->username }}', 'required' => 'required']) !!}
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		<div class="form-group">
-			{!! Form::label('password', 'Nuevo password') !!}
-			{!! Form::password('password', ['class'=>'form-control']) !!}
+			{!! Form::label('password', 'Nueva Contraseña') !!}
+			{!! Form::password('password', ['class'=>'form-control','placeholder'=>'Nueva Contraseña...','data-toggle' => 'password', 'data-placement' => 'before', 'autocomplete' => 'false']) !!}
 		</div>
 	</div>
 	@include('usuarios.partials.image')
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<br><br>
 		<div class="form-group mt-3 text-center">
 			{{ Form::button(
 				'<i class="fa fa-save"></i> Guardar',
@@ -63,6 +64,7 @@
 
 @push('scripts')
 <script src="{{ asset('js/validator.js') }}"></script>
+<script src="{{ url('assets/plugins/bootstrap-show-password/dist/bootstrap-show-password.js') }}"></script>
 <script>
     /** Referencia http://1000hz.github.io/bootstrap-validator/ */
     $('#form').validator()

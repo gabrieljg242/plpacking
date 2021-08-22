@@ -49,6 +49,13 @@
                     <span>Dasboard</span>
                 </a>
             </li>
+            
+            <li class="">
+                <a href="#">
+                    <i class='fa fa-th-large'></i>
+                    <span>Pedidos</span>
+                </a>
+            </li>            
 
 			@canany(['client.list'])
             <li class="{{ Request::is('clientes*') ? 'active' : '' }}">
@@ -58,6 +65,20 @@
                 </a>
             </li>
             @endcan
+
+            <li class="">
+                <a href="#">
+                    <i class='fa fa-th-large'></i>
+                    <span>Almacen</span>
+                </a>
+            </li> 
+
+            <li class="">
+                <a href="#">
+                    <i class='fa fa-th-large'></i>
+                    <span>Produccion</span>
+                </a>
+            </li> 
 
             @canany(['cobranza.list'])
             <li class="{{ Request::is('cobranzas*') ? 'active' : '' }}">

@@ -124,7 +124,7 @@ $breadcrumbs = array(
                         </div>
                     </div>	
 
-                    <div class="row mt-2 mb-3">
+                    <div class="row mt-4 mb-3">
                         <div class="col-md-12 text-center">
                             <button class="btn pl-btn-secondary btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
                            <a href="{{ route('clientes.index') }}" class="btn pl-btn-secondary btn-sm ml-2">Cancelar</a>

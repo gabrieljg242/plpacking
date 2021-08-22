@@ -122,6 +122,7 @@
 	
 
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<br><br>
 		<div class="form-group text-center mt-3">
 			{{ Form::button(
 				'<i class="fa fa-save"></i> Guardar',

@@ -19,7 +19,7 @@
                     {!! Form::textarea('description', null, ['class'=>'form-control', 'rows' => 2, 'cols' => 40, 'placeholder'=>'Descripción...']) !!}
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4">
                 <div class="form-group text-center">
                     {{ Form::button(
                         '<i class="fa fa-save"></i> Guardar',
