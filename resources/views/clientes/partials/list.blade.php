@@ -39,21 +39,14 @@
             dom: '<"dataTables_wrapper dt-bootstrap"<"row"<"col-xl-7 d-block d-sm-flex d-xl-block justify-content-center"<"d-block d-lg-inline-flex mr-0 mr-sm-3"l><"d-block d-lg-inline-flex"B>><"col-xl-5 d-flex d-xl-block justify-content-center"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>>',
             buttons: [
                 {
-                    text: '<i class="fas fa-lg fa-fw m-r-10 fa-plus sm-hide"></i> Crear Cliente',
+                    text: 'Crear Cliente',
                     className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                         alert( 'Button activated' );
                     }
                 },
                 {
-                    text: '<i class="fas fa-lg fa-fw m-r-10 fa-plus"></i> Crear Procedimiento',
-                    className: 'btn btn-sm pl-btn-secondary sm-hide',
-                    action: function ( e, dt, node, config ) {
-                        alert( 'Button activated' );
-                    }
-                },
-                {
-                    text: '<i class="fas fa-file-excel fa-fw sm-hide"></i> Exportar Excel',
+                    text: 'Exportar Excel',
                     className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                         alert( 'Button activated' );

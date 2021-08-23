@@ -37,10 +37,10 @@ class ForgotPasswordController extends Controller
 
         Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
             $message->to($request->email);
-            $message->subject('Reset Password');
+            $message->subject('Restablecer la contraseña');
         });
 
-        return back()->with('message', 'We have e-mailed your password reset link!');
+        return back()->with('message', '¡Hemos enviado un correo electrónico con el enlace de restablecimiento de contraseña!');
     }
    
     public function showResetPasswordForm($token) { 
@@ -71,7 +71,7 @@ class ForgotPasswordController extends Controller
 
         DB::table('password_resets')->where(['email'=> $request->email])->delete();
 
-        return redirect('/login')->with('message', 'Your password has been changed!');
+        return redirect('/login')->with('message', '¡Tu contraseña ha sido cambiada!');
     }
     
 }

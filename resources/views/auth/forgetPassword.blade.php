@@ -1,6 +1,6 @@
 @extends('layouts.empty', ['paceTop' => true])
 
-@section('title', 'Password Reset ')
+@section('title', 'Restablecimiento de contraseña ')
   
 @section('content')
 <div class="login-cover">
@@ -19,7 +19,7 @@
     <!-- begin brand -->
     <div class="login-header">
         <div class="brand text-center">
-            Password Reset
+            Reestablecer contraseña
         </div>
         
     </div>
@@ -50,14 +50,14 @@
 
         @csrf            
             <div class="form-group m-b-20">                
-                <input type="text" id="email_address" class="form-control form-control-lg" name="email" required autofocus placeholder ="E-Mail Address">
+                <input type="text" id="email_address" class="form-control form-control-lg" name="email" required autofocus placeholder ="Correo">
                 @if ($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 @endif                
             </div>
             
             <div class="login-buttons">
-                <button type="submit" class="btn pl-btn-primary btn-block btn-lg">Send Password Reset Link</button>
+                <button type="submit" class="btn pl-btn-primary btn-block btn-lg">Enviar</button>
             </div>  
             <div class="m-t-20">
                 Regresara. Hacer click <a href="{{ route('login') }}">aquí</a>.

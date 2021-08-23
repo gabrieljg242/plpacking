@@ -29,8 +29,9 @@ $breadcrumbs = array(
 
                 <div class="panel-body">
                     <div class="row mt-2 mb-3">
-                        <div class="col-md-12 text-right text-sm-center">
-                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn pl-btn-secondary btn-sm ml-2">Historial procesamientos</i></a>
+                        <div class="col-md-12 text-left text-sm-center">
+                            <button class="btn pl-btn-secondary btn-sm">Editar</button>
+                            <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn pl-btn-secondary btn-sm ml-1">Historial procesamientos</i></a>
                         </div>
                     </div>
                     <legend class="m-b-15">Datos del Cliente</legend>
@@ -126,7 +127,7 @@ $breadcrumbs = array(
 
                     <div class="row mt-4 mb-3">
                         <div class="col-md-12 text-center">
-                            <button class="btn pl-btn-secondary btn-sm"><i class="fas fa-save fa-fw"></i> Editar</button>
+                            <button class="btn pl-btn-secondary btn-sm"><i class="fas fa-save fa-fw"></i> Guardar</button>
                            <a href="{{ route('clientes.index') }}" class="btn pl-btn-secondary btn-sm ml-2">Cancelar</a>
                             <button class="btn pl-btn-secondary btn-sm ml-2">Limpiar</button>
                         </div>
