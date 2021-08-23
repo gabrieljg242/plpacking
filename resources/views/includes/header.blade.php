@@ -17,7 +17,7 @@
 		@endif
 		<a href="{{ url('/') }}" class="navbar-brand">
 			<img src="{{ url('assets/img/logo-2.png') }}" alt="">
-			<b>PACKING & LOGISTICS</b>
+			<span>PACKING & LOGISTICS</span>
 		</a>
 		@if ($headerMegaMenu)
 			<button type="button" class="navbar-toggle pt-0 pb-0 mr-0" data-toggle="collapse" data-target="#top-navbar">
@@ -62,9 +62,9 @@
 				<span class="label">0</span>
 			</a>
 			<div class="dropdown-menu media-list dropdown-menu-right">
-				<div class="dropdown-header">NOTIFICATIONS (0)</div>
+				<div class="dropdown-header">NOTIFICACIONES (0)</div>
 				<div class="text-center width-300 p-b-10 p-t-10">
-					No notification found
+					No se encontró notificaciones
 				</div>
 			</div>
 		</li>

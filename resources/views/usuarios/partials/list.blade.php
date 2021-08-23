@@ -10,7 +10,7 @@
         <th width="20%">Área</th>
         <th width="20%">Cargo</th>
         <th width="20%" class="text-center">Estado</th>
-        <th width="20%">Acciones</th>
+        <th width="20%">Opciones</th>
       </thead>
     <tbody>
         @foreach ($users as $usuario)
@@ -18,8 +18,8 @@
                 <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->name }}</td>
                 <td>{{ $usuario->getRoleNames()[0] }}</td>
-                <td>{{ $usuario->areas->nombre }}</td>
-                <td>{{ $usuario->cargos->nombre }}</td>
+                <td>{{ isset($usuario->areas->nombre) ? $usuario->areas->nombre : '' }}</td>
+                <td>{{ isset($usuario->cargos->nombre) ? $usuario->cargos->nombre : '' }}</td>
                 <td class="text-center text-white {{ ($usuario->status == 1 ? 'bg-success' : 'bg-danger') }}">{{ ($usuario->status == 1 ? 'Activo' : 'Desactivado') }}</td>
                 <td class="text-center">
                     @can('user.update')

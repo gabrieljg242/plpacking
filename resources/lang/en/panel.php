@@ -3,9 +3,9 @@
 return [
 	'profileEdit' => 'Editar perfil',
 	'config' => 'Configuraciones',
-	'logout' => 'Salir',
-	'dataSaved' => 'Datos guardados con exito.',
-	'dataDeleted' => 'Datos eliminados con exito.',
+	'logout' => 'CERRAR SESIÓN',
+	'dataSaved' => 'Se guardó con exito los datos',
+	'dataDeleted' => 'Se elimino con exito los datos',
 ];
 
  ?>

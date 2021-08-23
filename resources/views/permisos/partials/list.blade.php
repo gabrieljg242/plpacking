@@ -9,7 +9,7 @@
         <th width="25%">Permiso</th>
         <th width="25%">Descripción</th>
         <th width="20%">Modulo</th>
-        <th width="20%">Acciones</th>        
+        <th width="20%">Opciones</th>        
     </thead>
     <tbody>
         @foreach ($permissions as $permiso)

@@ -45,14 +45,14 @@
 			<!-- options menu -->
 			<li class="{{ Request::is('dashboard') ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
-                    <i class='fa fa-th-large'></i>
-                    <span>Dasboard</span>
+                    <i class='fa fa-chart-bar'></i>
+                    <span>DASHBOARD</span>
                 </a>
             </li>
             
             <li class="">
                 <a href="#">
-                    <i class='fa fa-th-large'></i>
+                    <i class='fa fa-bullhorn'></i>
                     <span>Pedidos</span>
                 </a>
             </li>            
@@ -68,14 +68,14 @@
 
             <li class="">
                 <a href="#">
-                    <i class='fa fa-th-large'></i>
+                    <i class='fa fa-truck'></i>
                     <span>Almacen</span>
                 </a>
             </li> 
 
             <li class="">
                 <a href="#">
-                    <i class='fa fa-th-large'></i>
+                    <i class='fa fa-industry'></i>
                     <span>Produccion</span>
                 </a>
             </li> 
@@ -122,6 +122,20 @@
                 </ul>
             </li>
             @endcan
+
+            <li class="{{ Request::is('cobranzas*') ? 'active' : '' }} mt-4">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                class="dropdown-item"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form-sidebar').submit();">
+                    <i class='fa fa-sign-out-alt'></i>
+                    <span>{{ __('panel.logout') }}</span>
+                </a>
+            </li>
+
+            <form id="logout-form-sidebar" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+            </form>
 
 			<!-- begin sidebar minify button -->
 			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>

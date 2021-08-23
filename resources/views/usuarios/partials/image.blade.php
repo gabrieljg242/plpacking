@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-xs-12">
     <div class="form-group">
-      {!! Form::label('profile_picture', 'Imagen de perfil') !!}
+      {!! Form::label('profile_picture', 'Subir imágen de usuario') !!}
       {!! Form::file('profile_picture', ['class'=>'form-control','id'=>'imageFile']) !!}
     </div>
 </div>
@@ -28,6 +28,7 @@
                     preview.append(image);
                 };
             $('#image-not-found').hide();
+            $('#imageProfile').hide();
             $('#imagePreview').show(); 
         }
     } 

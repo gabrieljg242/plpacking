@@ -3,8 +3,10 @@
 		@if(session()->has('message'))
 			<div class="alert alert-info fade show m-b-10">
 				<span class="close" data-dismiss="alert" style="cursor: pointer;">×</span>
-				<strong>Exito!</strong><br><br>
-				{{ session()->get('message') }}
+				<br>
+				<strong>{{ session()->get('message') }}</strong>
+				<br>
+				<br>
 			</div>
 		@endif
 

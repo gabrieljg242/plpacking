@@ -2,6 +2,10 @@
 
 @section('title', 'Crear Usuario')
 
+@section('title', 'Perfil de usuario')
+
+@section('pageHeader', 'Perfil de usuario')
+
 @section('content')
 <div class="spark-screen">
     <div class="row">
@@ -10,7 +14,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">Editar Perfil</h4>
+                    <h4 class="panel-title">Datos de usuario</h4>
                     <div class="panel-heading-btn">
                        
                     </div>
