@@ -48,6 +48,22 @@ Route::group(['prefix'=>'clientes','middleware' => ['auth','checkstatus']], func
     ->name('clientes.index')
     ->middleware('permission:client.list');
 
+    Route::get('/create', 'ClienteController@create')
+    ->name('clientes.create')
+    ->middleware('permission:client.create');
+
+    Route::post('/', 'ClienteController@store')
+    ->name('clientes.store')
+    ->middleware('permission:client.create');
+
+    Route::get('{id}/edit', 'ClienteController@edit')
+    ->name('clientes.edit')
+    ->middleware('permission:client.update');
+
+    Route::put('{id}/update', 'ClienteController@update')
+    ->name('clientes.update')
+    ->middleware('permission:client.update');
+
     Route::get('{id}/show', 'ClienteController@show')
     ->name('clientes.show')
     ->middleware('permission:client.show');

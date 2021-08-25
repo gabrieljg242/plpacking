@@ -41,7 +41,7 @@
         	<input type="text" class="form-control" placeholder="Sidebar menu filter..." data-sidebar-search="true" />
 			</li>
 			@endif
-			<li class="nav-header">Navegación</li>
+			<li class="nav-header">Menú principal</li>
 			<!-- options menu -->
 			<li class="{{ Request::is('dashboard') ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
@@ -69,14 +69,14 @@
             <li class="">
                 <a href="#">
                     <i class='fa fa-truck'></i>
-                    <span>Almacen</span>
+                    <span>Almacén</span>
                 </a>
             </li> 
 
             <li class="">
                 <a href="#">
                     <i class='fa fa-industry'></i>
-                    <span>Produccion</span>
+                    <span>Producción</span>
                 </a>
             </li> 
 

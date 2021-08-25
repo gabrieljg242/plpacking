@@ -4,16 +4,16 @@
 @endpush
 <table class="table table-bordered data-table display responsive nowrap" style="width:100%">
     <thead class="text-center bg-secondary text-white">
-        <th width="10%">ID</th>
-        <th width="30%">Rol</th>
-        <th width="40%">Descripción</th>
+        <th width="10%">Item</th>
+        <th width="30%">Roles</th>
+        <th width="40%">Descripción del rol</th>
         <th width="20%">Opciones</th>
     </thead>
     <tbody>
-        @foreach ($roles as $rol)
+        @foreach ($roles as $key =>$rol)
             <tr>
-                <td>{{ $rol->id }}</td>
-                <td>{{ $rol->name }}</td>
+                <td class="text-center">{{ ($key + 1) }}</td>
+                <td class="text-center">{{ $rol->name }}</td>
                 <td>{{ $rol->description }}</td>
                 <td class="text-center">
                     @can('role.update')
@@ -72,7 +72,7 @@
             buttons: [
                 @can('role.create')
                 {
-                    text: 'Nuevo Rol',
+                    text: 'Crear nuevo rol',
                     className: 'btn btn-sm pl-btn-secondary',
                     action: function ( e, dt, node, config ) {
                        location.href = "{{ url('roles/create') }}";

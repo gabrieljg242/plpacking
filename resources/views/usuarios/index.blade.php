@@ -29,27 +29,7 @@
 			        </div>
 
 			        <div class="panel-body">
-
 			        	@include('includes.component.message')
-
-			        	@can('user.create')
-			        	 	<div class="row mb-3">
-			        	 		<div class="col-md-12 text-right text-sm-center">
-			        	 			<a href="{{ url('usuarios/create') }}">
-										{{ Form::button(
-											'<i class="fa fa-plus"></i> Nuevo Usuario',
-												[
-													'type' => 'submit',
-													'class' => 'btn pl-btn-secondary btn-sm',
-													'data-toggle' => 'tooltip',
-													'title' => 'Nuevo'
-												]
-										)}}
-									</a>
-			        	 		</div>
-			        	 	</div>
-						@endcan
-
 						@include('usuarios.partials.list')
 					</div>
 					<!-- /.box-body -->

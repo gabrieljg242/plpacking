@@ -1,12 +1,9 @@
 <div class="row">
 	<div class="col-md-12">
 		@if(session()->has('message'))
-			<div class="alert alert-info fade show m-b-10">
-				<span class="close" data-dismiss="alert" style="cursor: pointer;">×</span>
-				<br>
-				<strong>{{ session()->get('message') }}</strong>
-				<br>
-				<br>
+			<div class="alert alert-info fade show m-b-10" id="notificacion-alert">
+				<span class="close" data-dismiss="alert">×</span>
+				{{ session()->get('message') }}
 			</div>
 		@endif
 

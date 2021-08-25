@@ -14,17 +14,19 @@
         <th width="20%">Opciones</th>        
     </thead>
     <tbody>
+        @foreach($clientes as $key => $cliente)
         <tr class="text-center">
-            <td>01</td>
-            <td>AGRICOLA SAN MIGUEL DE PIURA</td>
-            <td>PQ-170690</td>
-            <td>Agroexportadora</td>
-            <td>Piura</td>
-            <td>17 junio 1990</td>
+            <td>{{ ($key + 1) }}</td>
+            <td>{{ $cliente->razon_social }}</td>
+            <td>{{ $cliente->codigo_cliente }}</td>
+            <td>{{ $cliente->rubros }}</td>
+            <td>{{ $cliente->direccion_fiscal }}</td>
+            <td>{{ $cliente->created_at }}</td>
             <td>
-                <a href="{{ route('clientes.show', encrypt(1)) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fas fa-eye fa-fw"></i></a>
+                <a href="{{ route('clientes.edit', encrypt($cliente->id)) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fas fa-eye fa-fw"></i></a>
             </td>
         </tr>
+        @endforeach
     </tbody>
 </table>
 
@@ -38,13 +40,15 @@
         var table = $('.data-table').DataTable( {
             dom: '<"dataTables_wrapper dt-bootstrap"<"row"<"col-xl-7 d-block d-sm-flex d-xl-block justify-content-center"<"d-block d-lg-inline-flex mr-0 mr-sm-3"l><"d-block d-lg-inline-flex"B>><"col-xl-5 d-flex d-xl-block justify-content-center"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>>',
             buttons: [
-                {
-                    text: 'Crear Cliente',
-                    className: 'btn btn-sm pl-btn-secondary',
-                    action: function ( e, dt, node, config ) {
-                        alert( 'Button activated' );
-                    }
-                },
+                @can('client.create')
+                    {
+                        text: 'Crear Cliente',
+                        className: 'btn btn-sm pl-btn-secondary',
+                        action: function ( e, dt, node, config ) {
+                            location.href = '{{ url("clientes/create") }}';
+                        }
+                    },
+                @endcan
                 {
                     text: 'Exportar Excel',
                     className: 'btn btn-sm pl-btn-secondary',

@@ -153,6 +153,6 @@ class UsersController extends Controller
             $usuario->save();
         }
 
-        return redirect()->back()->with('message','Datos guardados con exito.');
+        return redirect()->back()->with('message', __('panel.dataSaved'));
     }
 }

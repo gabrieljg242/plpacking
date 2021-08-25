@@ -17,7 +17,7 @@
 		@endif
 		<a href="{{ url('/') }}" class="navbar-brand">
 			<img src="{{ url('assets/img/logo-2.png') }}" alt="">
-			<span>PACKING & LOGISTICS</span>
+			<span style="font-size: 18px;font-weight: bold;">PACKING & LOGISTICS</span>
 		</a>
 		@if ($headerMegaMenu)
 			<button type="button" class="navbar-toggle pt-0 pb-0 mr-0" data-toggle="collapse" data-target="#top-navbar">
@@ -103,7 +103,6 @@
 				@can('user.profile.update')
 				<a href="{{ route('usuarios.profile.edit',['id' => encrypt(Auth::user()->id)]) }}" class="dropdown-item">{{ __('panel.profileEdit') }}</a>
 				@endcan
-				<a href="javascript:;" class="dropdown-item">{{ __('panel.config') }}</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="{{ route('logout') }}"
 				class="dropdown-item"

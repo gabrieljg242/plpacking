@@ -3,9 +3,10 @@
 return [
 	'profileEdit' => 'Editar perfil',
 	'config' => 'Configuraciones',
-	'logout' => 'CERRAR SESIÓN',
-	'dataSaved' => 'Se guardó con exito los datos',
+	'logout' => 'Cerrar sesión',
+	'dataSaved' => 'Se guardó con éxito los datos',
 	'dataDeleted' => 'Se elimino con exito los datos',
+	'fields_required' => '* Campos obligatorios' 
 ];
 
  ?>

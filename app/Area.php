@@ -14,4 +14,8 @@ class Area extends Model
     protected $fillable = [
     	'nombre','status'
     ];
+
+    public function cargos(){
+    	return $this->hasMany(Cargo::class, 'area_id','id');
+    }
 }

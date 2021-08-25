@@ -30,7 +30,6 @@ $breadcrumbs = array(
                 <div class="panel-body">
                     <div class="row mt-2 mb-3">
                         <div class="col-md-12 text-left text-sm-center">
-                            <button class="btn pl-btn-secondary btn-sm">Editar</button>
                             <a href="{{ route('clientes.pedidos', encrypt(1)) }}" class="btn pl-btn-secondary btn-sm ml-1">Historial procesamientos</i></a>
                         </div>
                     </div>
