@@ -88,3 +88,5 @@
         {!! Form::date('fecha_nacimiento', null, ['class'=>'form-control', 'placeholder'=>'Fecha de Cumpleaños / Aniversario...', 'required' => 'required']) !!}
     </div>
 </div>
+
+@include('includes.component.fields-required')
