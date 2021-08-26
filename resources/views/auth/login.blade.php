@@ -19,12 +19,10 @@
 
 		<!-- begin brand -->
 		<div class="login-header">
-			<div class="brand">
-				<span class="logo"></span> <b>{{ config('app.name', 'Laravel') }}</b> Admin
+			<div class="brand text-center">
+				Acceso a Intranet
 			</div>
-			<div class="icon">
-				<i class="fa fa-lock"></i>
-			</div>
+			
 		</div>
 		<!-- end brand -->
 		<!-- begin login-content -->
@@ -43,10 +41,9 @@
 			        @endif
 				</div>
 			</div>
+
 			<form method="POST" action="{{ route('login') }}" class="margin-bottom-0">
-
-
-			@csrf
+				@csrf
 				<div class="form-group m-b-20">
 					<input id="username" type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required placeholder ="Usuario" autofocus>
 
@@ -65,18 +62,11 @@
                         </span>
                     @enderror
 				</div>
-				<div class="checkbox checkbox-css m-b-20">
-					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-					<label for="remember_checkbox">
-						Recuérdame
-					</label>
-				</div>
 				<div class="login-buttons">
 					<button type="submit" class="btn pl-btn-primary btn-block btn-lg">Ingresar</button>
 				</div>
 				<div class="m-t-20">
-					Olvido de contraseña. Hacer click <a href="javascript:;">aquí</a>.
+					Olvido de contraseña. Hacer click <a href="{{ route('forget.password.get') }}">aquí</a>.
 				</div>
 			</form>
 		</div>

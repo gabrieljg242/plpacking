@@ -1,4 +1,4 @@
-{!! Form::open(['method'=>'POST', 'url' => 'usuarios', 'id' => 'form']) !!}
+{!! Form::open(['method'=>'POST', 'enctype' => 'multipart/form-data', 'url' => 'usuarios', 'id' => 'form']) !!}
 {{ Form::token() }}
 <div class="row">
   <div class="col-md-4">
@@ -15,12 +15,28 @@
           </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-       <div class="form-group">
-           {!! Form::label('status', 'Estatus') !!}
-           {{ Form::select('status',[1 => 'Activo', 0 => 'Desactivado'], null , ['class' => 'form-control']) }}
-       </div>
-   </div>
-</div>
+         <div class="form-group">
+             {!! Form::label('status', 'Estatus') !!}
+             {{ Form::select('status',[1 => 'Activo', 0 => 'Desactivado'], null , ['class' => 'form-control']) }}
+         </div>
+      </div>
+      
+  </div>
+
+  <div class="row mt-3">
+      <div class="col-md-6">
+            <div class="box-body box-profile">
+              <img src="{{ asset('images/img-not-found.jpg') }}" id="image-not-found" class="img-responsive" alt="">
+              <div id="imagePreview"></div>
+            </div>
+      </div>
+      <br>
+  </div>
+
+  <div class="row mt-3">
+    @include('usuarios.partials.image')
+  </div>
+
 </div>
 
 <div class="col-md-8">
@@ -78,62 +94,58 @@
    </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
    <div class="form-group">
        {!! Form::label('password', '* Contraseña') !!}
        {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Contraseña...', 'required' => 'required','data-toggle' => 'password', 'data-placement' => 'before', 'autocomplete' => 'false']) !!}
    </div>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div class="form-group">
-        {!! Form::label('password', '* Repita Contraseña') !!}
-        <input type="password" data-toggle="password" data-placement="before" class="form-control" type="Contraseña" placeholder="Contraseña" data-rule-equalTo="#password" autocomplete="false"/>
-    </div>
-</div>
 
 </div>
 </div>
+
+@include('includes.component.fields-required')
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
- <div class="form-group text-center mt-3">
-    {{ Form::button(
-        '<i class="fa fa-save"></i> Guardar',
-        [
-        'type' => 'submit',
-        'class' => 'btn pl-btn-secondary btn-sm',
-        'data-toggle' => 'tooltip',
-        'title' => 'Guardar'
-        ]
-        )}}
-        {{ Form::button(
-            '<i class="fa fa-close"></i> Cancelar',
-            [
-            'onclick'=>'history.back()',
-            'type' => 'reset',
-            'class' => 'btn pl-btn-secondary btn-sm',
-            'data-toggle' => 'tooltip',
-            'title' => 'Cancelar'
-            ]
-            )}}
-            {{ Form::button(
-                'Limpiar',
+        <div class="form-group text-center mt-3">
+              {{ Form::button(
+                '<i class="fa fa-save"></i> Guardar',
+                [
+                'type' => 'button',
+                'class' => 'btn pl-btn-secondary btn-sm validate-submit',
+                'data-toggle' => 'tooltip',
+                'title' => 'Guardar'
+                ]
+              )}}
+              {{ Form::button(
+                '<i class="fa fa-close"></i> Cancelar',
                 [
                 'type' => 'reset',
-                'class' => 'btn pl-btn-secondary btn-sm',
+                'class' => 'btn pl-btn-secondary btn-sm validate-cancel',
                 'data-toggle' => 'tooltip',
-                'title' => 'Limpiar'
+                'title' => 'Cancelar'
                 ]
                 )}}
-            </div>
+              {{ Form::button(
+                  'Limpiar',
+                  [
+                  'type' => 'reset',
+                  'class' => 'btn pl-btn-secondary btn-sm',
+                  'data-toggle' => 'tooltip',
+                  'title' => 'Limpiar'
+                  ]
+              )}}
+        </div>
         </div>
     </div>
     {!! Form::close() !!}
 
     @push('scripts')
-    <!-- <script src="{{ url('assets/plugins/bootstrap-show-password/dist/bootstrap-show-password.js') }}"></script> -->
+    <script src="{{ url('assets/plugins/bootstrap-show-password/dist/bootstrap-show-password.js') }}"></script>
+    <script src="{{ url('/assets/js/alert-validate.js') }}"></script>
 
     <script>
-        $('#form').validate()
+
+        $('#form').validate();
+
     </script>
     @endpush

@@ -15,9 +15,9 @@
 			<span class="icon-bar"></span>
 		</button>
 		@endif
-		<a href="{{ route('home') }}" class="navbar-brand">
+		<a href="{{ url('/') }}" class="navbar-brand">
 			<img src="{{ url('assets/img/logo-2.png') }}" alt="">
-			<b>PACKING & LOGISTICS</b>
+			<span style="font-size: 18px;font-weight: bold;">PACKING & LOGISTICS</span>
 		</a>
 		@if ($headerMegaMenu)
 			<button type="button" class="navbar-toggle pt-0 pb-0 mr-0" data-toggle="collapse" data-target="#top-navbar">
@@ -55,16 +55,16 @@
 	@includeWhen($headerMegaMenu, 'includes.header-mega-menu')
 	
 	<!-- begin header-nav -->
-	<ul class="navbar-nav navbar-right">
+	<ul class="navbar-nav navbar-right pr-5">
 		<li class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle f-s-14">
 				<i class="fa fa-bell"></i>
 				<span class="label">0</span>
 			</a>
 			<div class="dropdown-menu media-list dropdown-menu-right">
-				<div class="dropdown-header">NOTIFICATIONS (0)</div>
+				<div class="dropdown-header">NOTIFICACIONES (0)</div>
 				<div class="text-center width-300 p-b-10 p-t-10">
-					No notification found
+					No se encontró notificaciones
 				</div>
 			</div>
 		</li>
@@ -86,16 +86,23 @@
 		@endisset
 		<li class="dropdown navbar-user">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<div class="image image-icon bg-black text-grey-darker">
-					<i class="fa fa-user"></i>
-				</div>
+
+				@if(!empty(Auth::user()->profile_picture))
+					<div class="image-profile-header">
+						<img src="{{ asset('storage/'.Auth::user()->profile_picture) }}" class="img-responsive" alt="">
+					</div>
+				@else
+					<div class="image image-icon bg-black text-grey-darker">
+						<i class="fa fa-user"></i>
+					</div>
+				@endif
+
 				<span class="d-none d-md-inline">{{ Auth::user()->name }}</span> <b class="caret"></b>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right">
 				@can('user.profile.update')
 				<a href="{{ route('usuarios.profile.edit',['id' => encrypt(Auth::user()->id)]) }}" class="dropdown-item">{{ __('panel.profileEdit') }}</a>
 				@endcan
-				<a href="javascript:;" class="dropdown-item">{{ __('panel.config') }}</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="{{ route('logout') }}"
 				class="dropdown-item"

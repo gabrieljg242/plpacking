@@ -19,13 +19,12 @@
 @endpush
 
 @section('content')
-	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-inverse">
 			        <!-- begin panel-heading -->
 			        <div class="panel-heading">
-			            <h4 class="panel-title">Listado de Clientes</h4>
+			            <h4 class="panel-title">Lista de Clientes</h4>
 			            <div class="panel-heading-btn">
 							<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 							<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
@@ -33,12 +32,9 @@
 			        </div>
 
 			        <div class="panel-body">
-						<div class="row mb-5">
-							<h5>Datos de búsqueda</h5>
-						</div>
-
 						<div class="row">
 							<div class="col-md-12">
+								@include('includes.component.message')
 								@include('clientes.partials.list')
 							</div>
 						</div>	
@@ -50,7 +46,6 @@
 
 			</div>
 		</div>
-	</div>
 @endsection
 
 @push('scripts')

@@ -3,17 +3,17 @@
     <link href="{{ url('/assets/plugins/DataTable/responsive.dataTables.min.css') }}" rel="stylesheet" type="text/css">
 @endpush
 <table class="table table-bordered data-table display responsive nowrap" style="width:100%">
-    <thead>
-        <th width="10%">ID</th>
-        <th width="30%">Rol</th>
-        <th width="40%">Descripción</th>
-        <th width="20%">Acciones</th>
+    <thead class="text-center bg-secondary text-white">
+        <th width="10%">Item</th>
+        <th width="30%">Roles</th>
+        <th width="40%">Descripción del rol</th>
+        <th width="20%">Opciones</th>
     </thead>
     <tbody>
-        @foreach ($roles as $rol)
+        @foreach ($roles as $key =>$rol)
             <tr>
-                <td>{{ $rol->id }}</td>
-                <td>{{ $rol->name }}</td>
+                <td class="text-center">{{ ($key + 1) }}</td>
+                <td class="text-center">{{ $rol->name }}</td>
                 <td>{{ $rol->description }}</td>
                 <td class="text-center">
                     @can('role.update')
@@ -62,12 +62,24 @@
 
 @push('scripts')
 <script src="{{ url('/assets/plugins/DataTable/datatables.min.js') }}"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
 <script src="{{ url('/assets/plugins/DataTable/dataTables.responsive.min.js') }}"></script>
 
 <script>
     $(document).ready(function() {
         var table = $('.data-table').DataTable( {
-            fixedHeader: true
+            dom: '<"dataTables_wrapper dt-bootstrap"<"row"<"col-xl-7 d-block d-sm-flex d-xl-block justify-content-center"<"d-block d-lg-inline-flex mr-0 mr-sm-3"l><"d-block d-lg-inline-flex"B>><"col-xl-5 d-flex d-xl-block justify-content-center"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>>',
+            buttons: [
+                @can('role.create')
+                {
+                    text: 'Crear nuevo rol',
+                    className: 'btn btn-sm pl-btn-secondary',
+                    action: function ( e, dt, node, config ) {
+                       location.href = "{{ url('roles/create') }}";
+                    }
+                }
+                @endcan
+            ]
         } );
     } );
 </script>

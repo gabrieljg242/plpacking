@@ -3,23 +3,23 @@
     <link href="{{ url('/assets/plugins/DataTable/responsive.dataTables.min.css') }}" rel="stylesheet" type="text/css">
 @endpush
 <table class="table table-bordered data-table display responsive nowrap" style="width:100%">
-    <thead>
+    <thead class="text-center bg-secondary text-white">
         <th width="10%">Item</th>
         <th width="20%">Nombre y apellido</th>
         <th width="20%">Tipo usuario</th>
         <th width="20%">Área</th>
         <th width="20%">Cargo</th>
         <th width="20%" class="text-center">Estado</th>
-        <th width="20%">Acciones</th>
+        <th width="20%">Opciones</th>
       </thead>
     <tbody>
-        @foreach ($users as $usuario)
+        @foreach ($users as $key => $usuario)
             <tr>
-                <td>{{ $usuario->id }}</td>
+                <td class="text-center">{{ ($key + 1) }}</td>
                 <td>{{ $usuario->name }}</td>
                 <td>{{ $usuario->getRoleNames()[0] }}</td>
-                <td>{{ $usuario->areas->nombre }}</td>
-                <td>{{ $usuario->cargos->nombre }}</td>
+                <td>{{ isset($usuario->areas->nombre) ? $usuario->areas->nombre : '' }}</td>
+                <td>{{ isset($usuario->cargos->nombre) ? $usuario->cargos->nombre : '' }}</td>
                 <td class="text-center text-white {{ ($usuario->status == 1 ? 'bg-success' : 'bg-danger') }}">{{ ($usuario->status == 1 ? 'Activo' : 'Desactivado') }}</td>
                 <td class="text-center">
                     @can('user.update')
@@ -70,13 +70,26 @@
 
 @push('scripts')
 <script src="{{ url('/assets/plugins/DataTable/datatables.min.js') }}"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
 <script src="{{ url('/assets/plugins/DataTable/dataTables.responsive.min.js') }}"></script>
 
 <script>
     $(document).ready(function() {
         var table = $('.data-table').DataTable( {
             fixedHeader: true,
-            responsive: true
+            responsive: true,
+            dom: '<"dataTables_wrapper dt-bootstrap"<"row"<"col-xl-7 d-block d-sm-flex d-xl-block justify-content-center"<"d-block d-lg-inline-flex mr-0 mr-sm-3"l><"d-block d-lg-inline-flex"B>><"col-xl-5 d-flex d-xl-block justify-content-center"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>>',
+            buttons: [
+                @can('user.create')
+                    {
+                        text: 'Nuevo Usuario',
+                        className: 'btn btn-sm pl-btn-secondary',
+                        action: function ( e, dt, node, config ) {
+                            location.href = "{{ url('usuarios/create') }}";
+                        }
+                    },
+                @endcan
+            ]
         } );
     } );
 </script>

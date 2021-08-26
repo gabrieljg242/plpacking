@@ -1,0 +1,1 @@
+<span class="ml-2 text-danger">{{ __('panel.fields_required') }}</span>

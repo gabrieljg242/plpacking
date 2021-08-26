@@ -30,6 +30,7 @@
                 </div>
 
                 <div class="panel-body">
+                    @include('includes.component.message')
                     @include('permisos.partials.form_edit')				
                 </div>
                 <!-- /.box-body -->

@@ -29,25 +29,7 @@
 			        </div>
 
 			        <div class="panel-body">
-
-			        	@can('permission.create')
-			        		<div class="row mb-3">
-			        	 		<div class="col-md-12 text-right">
-									<a href="{{ url('permisos/create') }}" class="pull-right">
-										{{ Form::button(
-											'<i class="fa fa-plus"></i> Nuevo Permiso',
-												[
-													'type' => 'submit',
-													'class' => 'btn pl-btn-secondary btn-sm',
-													'data-toggle' => 'tooltip',
-													'title' => 'Nuevo'
-												]
-										)}}
-									</a>
-								</div>
-							</div>
-						@endcan
-
+			        	@include('includes.component.message')
 						@include('permisos.partials.list')
 
 					</div>

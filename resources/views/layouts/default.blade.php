@@ -40,29 +40,7 @@
 		
 		<div id="content" class="content {{ $contentClass }}">
 
-		<div class="row">
-			<div class="col-md-12">
-				@if(session()->has('message'))
-					<div class="alert alert-info fade show m-b-10">
-						<span class="close" data-dismiss="alert">×</span>
-						<strong>Exito!</strong><br><br>
-						{{ session()->get('message') }}
-					</div>
-				@endif
-
-				@if (count($errors) > 0)
-
-				<div class="alert alert-danger">
-					<strong>Whoops!</strong> ocurrio un problema<br><br>
-					<ul>
-						@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
-				@endif
-			</div>
-		</div>
+		
 			<div class="row">
 				<div class="col">
 

@@ -10,9 +10,9 @@
 
 @endphp
 
-@section('title', 'Detalle de Roles')
+@section('title', 'Detalle Permisos de rol de usuario')
 
-@section('pageHeader', 'Detalle de Roles')
+@section('pageHeader', 'Detalle Permisos de rol de usuario')
 
 @section('content')
 <div class="spark-screen">
@@ -22,7 +22,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">Crear Rol</h4>
+                    <h4 class="panel-title">Configurar permisos de usuario</h4>
                     <div class="panel-heading-btn">
                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
@@ -30,6 +30,7 @@
                 </div>
 
                 <div class="panel-body">
+                    @include('includes.component.message')
                     @include('roles.partials.form_create')
                 </div>
                 <!-- /.box-body -->
