@@ -1,4 +1,4 @@
-{!! Form::open(['method'=>'POST', 'enctype' => 'multipart/form-data', 'url' => 'usuarios', 'id' => 'form']) !!}
+{!! Form::open(['method'=>'POST', 'enctype' => 'multipart/form-data', 'url' => 'usuarios', 'id' => 'form', 'autocomplete' => 'nope']) !!}
 {{ Form::token() }}
 <div class="row">
   <div class="col-md-4">
@@ -56,8 +56,8 @@
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
        <div class="form-group">
            {!! Form::label('area_id', '* Área') !!}
-           <select class="form-control" name="area_id" required>
-            <option value="">Seleccione...</option>
+           <select class="form-control" name="area_id" id="area_id" required onchange="$.getCargos()">
+            <option value="0">Seleccione...</option>
             @foreach ($areas as $key => $area)
             <option value="{{ $area->id }}">{{ $area->nombre }}</option>
             @endforeach
@@ -73,11 +73,8 @@
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
    <div class="form-group">
        {!! Form::label('cargo_id', '* Cargo') !!}
-       <select class="form-control" name="cargo_id" required>
+       <select class="form-control" name="cargo_id" id="cargo_id" required>
         <option value="">Seleccione...</option>
-        @foreach ($cargos as $key => $cargo)
-        <option value="{{ $cargo->id }}">{{ $cargo->nombre }}</option>
-        @endforeach
     </select>
 </div>
 </div>
@@ -146,6 +143,42 @@
     <script>
 
         $('#form').validate();
+
+        $(document).ready(function(){
+
+
+          jQuery.loading = function(loading = true){
+            if(loading == true){
+              $('#page-loader').removeClass('d-none');
+            }else{
+              $('#page-loader').addClass('d-none');
+            }
+          }
+
+          jQuery.getCargos = function(){
+
+            $.loading();
+            const idArea = $('#area_id').val();
+
+            $.ajax({
+              url: '{{ url("/") }}/area/' + idArea + '/cargos',
+              type: 'get',
+              dataType: 'json',
+              success: function(response){
+                if(response.status == 1){
+                  $('#cargo_id').html(response.data);
+                }else{
+                  alert('Error al conectar con el servidor.');
+                }
+                $.loading(false);
+              },
+              error: function(){
+
+              }
+            });
+          }
+
+        });
 
     </script>
     @endpush

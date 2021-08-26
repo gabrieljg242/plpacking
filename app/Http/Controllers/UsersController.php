@@ -66,7 +66,7 @@ class UsersController extends Controller
         $usuario    = User::findOrFail($id);
         $roles      = Role::all()->pluck('name', 'id');
         $areas      = Area::where('status','1')->orderBy('nombre','asc')->get();
-        $cargos     = Cargo::where('status','1')->orderBy('nombre','asc')->get();
+        $cargos     = Area::find($usuario->area_id)->cargos;
 
         return view('usuarios.edit', compact('usuario', 'roles','areas','cargos'));
     }

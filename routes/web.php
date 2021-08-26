@@ -305,4 +305,9 @@ Route::group(['prefix'=>'tipovehiculo','middleware' => ['auth','checkstatus']], 
     ->middleware('permission:tipovehiculo.pedidos');
 });
 
+Route::group(['prefix'=>'area','middleware' => ['auth','checkstatus']], function() {
+    Route::get('{id}/cargos', 'AreaController@getAreaCargos')
+    ->name('area.cargos');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
