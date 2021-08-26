@@ -22,7 +22,7 @@ class ClienteController extends Controller
     }
 
     public function store(Request $request){
-    	$contact = Cliente::create($request->all());
+    	Cliente::create($request->all());
         return redirect('clientes')->with('message', __('panel.dataSaved'));
     }
 

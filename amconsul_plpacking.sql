@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2021-08-25 01:21:44
+Date: 2021-08-25 20:16:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -102,6 +102,23 @@ CREATE TABLE `clientes` (
 INSERT INTO `clientes` VALUES ('1', 'A-1', '1', '1', 'AGRICOLA SAN MIGUEL DE PIURA', 'AGROINDUSTRIA', 'AGRICOLA SAN MIGUEL DE PIURA', 'AGROEXPORTADOR EXPARRAGOS', '20609865345', '15', 'AV. LOS FRUTALES 873, PIURA, PIURA', '15', '0', 'Camilo Lopez Perez', 'Gerente Administrativo', '017085643', 'cliente@agroexportador.com', '123456789', '1977-05-14', '2021-08-25 04:46:53', '2021-08-25 05:18:37');
 
 -- ----------------------------
+-- Table structure for marca_vehiculo
+-- ----------------------------
+DROP TABLE IF EXISTS `marca_vehiculo`;
+CREATE TABLE `marca_vehiculo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of marca_vehiculo
+-- ----------------------------
+INSERT INTO `marca_vehiculo` VALUES ('1', 'marca 1', '2021-08-26 00:01:34', '2021-08-26 00:01:52');
+
+-- ----------------------------
 -- Table structure for migrations
 -- ----------------------------
 DROP TABLE IF EXISTS `migrations`;
@@ -188,7 +205,7 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of permissions
@@ -216,6 +233,55 @@ INSERT INTO `permissions` VALUES ('20', 'cobranza.list', 'Listar Cobranza', 'cob
 INSERT INTO `permissions` VALUES ('21', 'cobranza.show', 'Ver Cobranza', 'cobranza', 'web', '2021-07-28 20:11:21', '2021-07-28 20:11:21');
 INSERT INTO `permissions` VALUES ('22', 'client.create', 'Crear cliente', 'client', 'web', '2021-08-25 03:41:26', '2021-08-25 05:03:15');
 INSERT INTO `permissions` VALUES ('23', 'client.update', 'Editar cliente', 'client', 'web', '2021-08-25 05:02:22', '2021-08-25 05:09:25');
+INSERT INTO `permissions` VALUES ('24', 'almacen.list', 'Listado almacen', 'almacen', 'web', '2021-08-25 20:59:47', '2021-08-25 20:59:47');
+INSERT INTO `permissions` VALUES ('25', 'proveedor.list', 'Listar', 'proveedor', 'web', '2021-08-25 22:55:02', '2021-08-25 22:55:02');
+INSERT INTO `permissions` VALUES ('26', 'proveedor.create', 'Crear Proveedor', 'proveedor', 'web', '2021-08-25 23:07:08', '2021-08-25 23:08:38');
+INSERT INTO `permissions` VALUES ('27', 'proveedor.update', 'Actualizar Proveedor', 'proveedor', 'web', '2021-08-25 23:14:33', '2021-08-25 23:14:33');
+INSERT INTO `permissions` VALUES ('28', 'procedencia.list', 'Listar Procedencia', 'procedencia', 'web', '2021-08-25 23:29:54', '2021-08-25 23:29:54');
+INSERT INTO `permissions` VALUES ('29', 'procedencia.create', 'Crear Procedencia', 'procedencia', 'web', '2021-08-25 23:30:18', '2021-08-25 23:30:18');
+INSERT INTO `permissions` VALUES ('30', 'procedencia.update', 'Actualizar Procedencia', 'procedencia', 'web', '2021-08-25 23:30:49', '2021-08-25 23:30:49');
+INSERT INTO `permissions` VALUES ('31', 'marcavehiculo.list', 'Listar', 'marcavehiculo', 'web', '2021-08-25 23:56:31', '2021-08-25 23:56:31');
+INSERT INTO `permissions` VALUES ('32', 'marcavehiculo.create', 'Crear', 'marcavehiculo', 'web', '2021-08-25 23:56:57', '2021-08-25 23:56:57');
+INSERT INTO `permissions` VALUES ('33', 'marcavehiculo.update', 'Actualizar', 'marcavehiculo', 'web', '2021-08-25 23:57:46', '2021-08-25 23:57:46');
+INSERT INTO `permissions` VALUES ('34', 'tipovehiculo.list', 'Listar', 'tipovehiculo', 'web', '2021-08-26 00:11:54', '2021-08-26 00:11:54');
+INSERT INTO `permissions` VALUES ('35', 'tipovehiculo.create', 'Crear', 'tipovehiculo', 'web', '2021-08-26 00:12:11', '2021-08-26 00:12:11');
+INSERT INTO `permissions` VALUES ('36', 'tipovehiculo.update', 'Actualizar', 'tipovehiculo', 'web', '2021-08-26 00:12:29', '2021-08-26 00:12:29');
+
+-- ----------------------------
+-- Table structure for procedencias
+-- ----------------------------
+DROP TABLE IF EXISTS `procedencias`;
+CREATE TABLE `procedencias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of procedencias
+-- ----------------------------
+INSERT INTO `procedencias` VALUES ('1', 'Procedencia 1', '2021-08-25 23:38:38', '2021-08-25 23:39:46');
+INSERT INTO `procedencias` VALUES ('2', 'Procedencia 2', '2021-08-25 23:40:07', '2021-08-25 23:40:07');
+
+-- ----------------------------
+-- Table structure for proveedores
+-- ----------------------------
+DROP TABLE IF EXISTS `proveedores`;
+CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of proveedores
+-- ----------------------------
+INSERT INTO `proveedores` VALUES ('1', 'Proveedor 1', '2021-08-25 23:12:17', '2021-08-25 23:19:29');
+INSERT INTO `proveedores` VALUES ('2', 'Proveedor 2', '2021-08-25 23:13:44', '2021-08-25 23:13:44');
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -280,6 +346,19 @@ INSERT INTO `role_has_permissions` VALUES ('21', '2');
 INSERT INTO `role_has_permissions` VALUES ('21', '3');
 INSERT INTO `role_has_permissions` VALUES ('22', '1');
 INSERT INTO `role_has_permissions` VALUES ('23', '1');
+INSERT INTO `role_has_permissions` VALUES ('24', '1');
+INSERT INTO `role_has_permissions` VALUES ('25', '1');
+INSERT INTO `role_has_permissions` VALUES ('26', '1');
+INSERT INTO `role_has_permissions` VALUES ('27', '1');
+INSERT INTO `role_has_permissions` VALUES ('28', '1');
+INSERT INTO `role_has_permissions` VALUES ('29', '1');
+INSERT INTO `role_has_permissions` VALUES ('30', '1');
+INSERT INTO `role_has_permissions` VALUES ('31', '1');
+INSERT INTO `role_has_permissions` VALUES ('32', '1');
+INSERT INTO `role_has_permissions` VALUES ('33', '1');
+INSERT INTO `role_has_permissions` VALUES ('34', '1');
+INSERT INTO `role_has_permissions` VALUES ('35', '1');
+INSERT INTO `role_has_permissions` VALUES ('36', '1');
 
 -- ----------------------------
 -- Table structure for roles
@@ -303,6 +382,23 @@ INSERT INTO `roles` VALUES ('1', 'Administrador', 'Administrador principal', 'we
 INSERT INTO `roles` VALUES ('2', 'Administrador 2', null, 'web', '2021-08-18 16:05:27', '2021-08-18 16:05:27');
 INSERT INTO `roles` VALUES ('3', 'Estándar', null, 'web', '2021-08-18 16:06:05', '2021-08-18 16:06:05');
 INSERT INTO `roles` VALUES ('4', 'Estándar 2', null, 'web', '2021-08-18 16:06:29', '2021-08-18 16:06:29');
+
+-- ----------------------------
+-- Table structure for tipo_vehiculo
+-- ----------------------------
+DROP TABLE IF EXISTS `tipo_vehiculo`;
+CREATE TABLE `tipo_vehiculo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT '',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tipo_vehiculo
+-- ----------------------------
+INSERT INTO `tipo_vehiculo` VALUES ('1', 'Camión', '2021-08-26 00:14:26', '2021-08-26 00:14:43');
 
 -- ----------------------------
 -- Table structure for users

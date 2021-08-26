@@ -66,12 +66,14 @@
             </li>
             @endcan
 
+            @canany(['almacen.list'])
             <li class="">
-                <a href="#">
+                <a href="{{ url('almacen') }}">
                     <i class='fa fa-truck'></i>
                     <span>Almacén</span>
                 </a>
-            </li> 
+            </li>
+            @endcan 
 
             <li class="">
                 <a href="#">
@@ -116,6 +118,47 @@
                     <li class="{{ Request::is('permisos*') ? 'active' : '' }}">
                         <a href="{{ url('permisos') }}">
                             <span>Permisos</span>
+                        </a>
+                    </li>
+                    @endcan
+                </ul>
+            </li>
+            @endcan
+
+            @canany(['proveedor.list','procedencia.list','marcavehiculo.list','tipovehiculo.list'])
+
+            <li class="has-sub {{ Request::is('proveedor*') || Request::is('procedencia*') || Request::is('marcavehiculo*') || Request::is('tipovehiculo*')  ? 'active' : '' }}">
+                <a href="#">
+                    <b class="caret"></b>
+                    <i class='fa fa-cogs'></i>
+                    <span>Mantenedor</span>
+                </a>
+                <ul class="sub-menu">
+                    @can('proveedor.list')
+                    <li class="{{ Request::is('proveedor*') ? 'active' : '' }}">
+                        <a href="{{ url('proveedor') }}">
+                            <span>Proveedor</span>
+                        </a>
+                    </li>
+                    @endcan
+                    @can('procedencia.list')
+                    <li class="{{ Request::is('procedencia*') ? 'active' : '' }}">
+                        <a href="{{ url('procedencia') }}">
+                            <span>Procedencia</span>
+                        </a>
+                    </li>
+                    @endcan
+                    @can('marcavehiculo.list')
+                    <li class="{{ Request::is('marcavehiculo*') ? 'active' : '' }}">
+                        <a href="{{ url('marcavehiculo') }}">
+                            <span>Marca Vehiculo</span>
+                        </a>
+                    </li>
+                    @endcan
+                    @can('tipovehiculo.list')
+                    <li class="{{ Request::is('tipovehiculo*') ? 'active' : '' }}">
+                        <a href="{{ url('tipovehiculo') }}">
+                            <span>Tipo Vehiculo</span>
                         </a>
                     </li>
                     @endcan
