@@ -21,24 +21,26 @@
         <th width="20%">Opciones</th> 
     </thead>
     <tbody>
+        @foreach($ingresos as $key => $ingreso)
         <tr class="text-center">
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
-            <td>Test</td>
+            <td>{{ ($key + 1) }}</td>
+            <td>{{ date('d/m/Y', strtotime($ingreso->fecha_ingreso)) }}</td>
+            <td>{{ date('d/m/Y', strtotime($ingreso->fecha_proceso)) }}</td>
+            <td>{{ $ingreso->procedencia->nombre }}</td>
+            <td>{{ $ingreso->producto->nombre }}</td>
+            <td>{{ $ingreso->cliente->razon_social }}</td>
+            <td>{{ $ingreso->numero_guia }}</td>
+            <td>{{ $ingreso->numero_trazabilidad }}</td>
+            <td>{{ $ingreso->numero_jaba }}</td>
+            <td>{{ $ingreso->peso_guia }}</td>
+            <td>{{ $ingreso->peso_planta }}</td>
+            <td>{{ $ingreso->diferencia_peso }}</td>
+            <td>{{ $ingreso->porcentage_diferencia }}</td>
             <td>
-                <a href="{{ route('clientes.edit', encrypt(1)) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fas fa-eye fa-fw"></i></a>
+                <a href="{{ route('almacen.edit', encrypt($ingreso->id)) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fas fa-eye fa-fw"></i></a>
             </td>
         </tr>
+        @endforeach
     </tbody>
 </table>
 
@@ -54,10 +56,10 @@
             buttons: [
                 @can('client.create')
                     {
-                        text: 'Crear Cliente',
+                        text: 'Crear Ingreso',
                         className: 'btn btn-sm pl-btn-secondary',
                         action: function ( e, dt, node, config ) {
-                            location.href = '{{ url("clientes/create") }}';
+                            location.href = '{{ url("almacen/create") }}';
                         }
                     },
                 @endcan

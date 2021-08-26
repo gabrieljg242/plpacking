@@ -71,6 +71,10 @@ Route::group(['prefix'=>'clientes','middleware' => ['auth','checkstatus']], func
     Route::get('{id}/pedidos', 'ClienteController@pedidos')
     ->name('clientes.pedidos')
     ->middleware('permission:client.pedidos');
+
+    Route::get('{id}/apigetcliente', 'ClienteController@apiGetCliente')
+    ->name('clientes.apigetcliente');
+
 });
 
 Route::group(['prefix'=>'cobranzas','middleware' => ['auth','checkstatus']], function() {
@@ -177,6 +181,9 @@ Route::group(['prefix'=>'almacen','middleware' => ['auth','checkstatus']], funct
     Route::get('{id}/show', 'AlmacenController@show')
     ->name('almacen.show')
     ->middleware('permission:almacen.show');
+
+    Route::get('{form_id}/{ingreso_id}/apigetformproducto', 'AlmacenController@apiGetFormproducto')
+    ->name('clientes.apigetcliente');
 
 });
 

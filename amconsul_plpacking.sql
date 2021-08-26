@@ -10,10 +10,57 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2021-08-25 20:16:34
+Date: 2021-08-26 17:45:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for almacen_ingresos
+-- ----------------------------
+DROP TABLE IF EXISTS `almacen_ingresos`;
+CREATE TABLE `almacen_ingresos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cliente_id` int(11) DEFAULT NULL,
+  `producto_id` int(11) DEFAULT NULL,
+  `producto_variacion_id` int(11) DEFAULT NULL,
+  `marca_vehiculo_id` int(11) DEFAULT NULL,
+  `tipo_veiculo_id` int(11) DEFAULT NULL,
+  `proveedor_id` int(11) DEFAULT NULL,
+  `procedencia_id` int(11) DEFAULT NULL,
+  `id_usuario_aprobacion` int(11) DEFAULT NULL,
+  `fecha_ingreso` date DEFAULT NULL,
+  `numero_guia` varchar(255) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `numero_jaba` int(11) DEFAULT NULL,
+  `peso_guia` float DEFAULT NULL,
+  `placa_vehiculo` varchar(255) DEFAULT NULL,
+  `peso_planta` float DEFAULT NULL,
+  `numero_trazabilidad` varchar(255) DEFAULT NULL,
+  `diferencia_peso` float DEFAULT NULL,
+  `fecha_aprobacion` datetime DEFAULT NULL,
+  `porcentage_diferencia` float DEFAULT NULL,
+  `clp` varchar(255) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `marca_veiculo_alamcen_ingresos` (`marca_vehiculo_id`),
+  KEY `tipo_vehiculo_alamcen_ingresos` (`tipo_veiculo_id`),
+  KEY `proveedores_alamcen_ingresos` (`proveedor_id`),
+  KEY `procedencias_alamcen_ingresos` (`procedencia_id`),
+  KEY `users_alamcen_ingresos` (`id_usuario_aprobacion`),
+  KEY `clientes_almacen_ingresos` (`cliente_id`),
+  KEY `productos_almacen_ingresos` (`producto_id`),
+  KEY `producto_variaciones_almacen_ingresos` (`producto_variacion_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of almacen_ingresos
+-- ----------------------------
+INSERT INTO `almacen_ingresos` VALUES ('9', '1', '1', null, '1', '1', '2', '2', null, '2021-08-26', '123', '2021-08-26', '2000', '2000', 'LK-90', '1000', '465-a5656', '-1000', null, '-50', null, '2021-08-26 20:42:41', '2021-08-26 20:42:41');
+INSERT INTO `almacen_ingresos` VALUES ('8', '1', '1', null, '1', '1', '1', '1', null, '2021-08-26', '7898', '2021-08-26', '1000', '1000', '50-A', '1000', '16651615', '0', null, '0', null, '2021-08-26 21:42:42', '2021-08-26 20:12:33');
+INSERT INTO `almacen_ingresos` VALUES ('10', '1', '1', null, '1', '1', '2', '2', '4', '2021-08-26', '41651651652', '2021-08-26', '5000', '1000', '89as51', '2500', 'sdfsdf616023', '1500', '2021-08-26 21:13:34', '150', null, '2021-08-26 21:14:30', '2021-08-26 20:49:34');
+INSERT INTO `almacen_ingresos` VALUES ('11', '4', '2', '1', '1', '1', '2', '2', '4', '2021-08-26', '000111', '2021-08-26', '300', '4000', 'G-50', '2000', '5651df6g1d6f51', '-2000', '2021-08-26 21:26:57', '-50', 'G-50', '2021-08-26 21:26:57', '2021-08-26 21:24:53');
 
 -- ----------------------------
 -- Table structure for areas
@@ -94,12 +141,14 @@ CREATE TABLE `clientes` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of clientes
 -- ----------------------------
 INSERT INTO `clientes` VALUES ('1', 'A-1', '1', '1', 'AGRICOLA SAN MIGUEL DE PIURA', 'AGROINDUSTRIA', 'AGRICOLA SAN MIGUEL DE PIURA', 'AGROEXPORTADOR EXPARRAGOS', '20609865345', '15', 'AV. LOS FRUTALES 873, PIURA, PIURA', '15', '0', 'Camilo Lopez Perez', 'Gerente Administrativo', '017085643', 'cliente@agroexportador.com', '123456789', '1977-05-14', '2021-08-25 04:46:53', '2021-08-25 05:18:37');
+INSERT INTO `clientes` VALUES ('5', 'NC2', '1', '1', 'NUEVO CIENTE 2', 'AGROEPOCTACIÓN', 'NUEVO CIENTE 2 FUERZA PERU', 'AGRO', '20876543251', '30', 'AV. LAS PALMERAS 7643, LA MOLINA', '15', '0', 'EDWUIN CASIMIRO CALLE', 'GERENTE', '01764532', 'ECASIMIRO@AMCONSULTORES.COM.PE', '98745654', '2021-08-05', '2021-08-26 17:18:28', '2021-08-26 17:18:28');
+INSERT INTO `clientes` VALUES ('4', 'NC1', '1', '1', 'NUEVO CLIENTE 1', 'AGROEXPORTACIÓN', 'NUEVO CLIENTE 1 PERÚ', 'AGROEXPORTACIÓN', '20678743261', '15', 'Av. Las Palmeras 6752', '15', '0', 'Edwuin', 'Gerente', '015673245', 'ecasimiro@amconsultores.com.pe', '987981726', '2021-07-07', '2021-08-26 16:40:52', '2021-08-26 16:40:52');
 
 -- ----------------------------
 -- Table structure for marca_vehiculo
@@ -205,7 +254,7 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of permissions
@@ -246,6 +295,8 @@ INSERT INTO `permissions` VALUES ('33', 'marcavehiculo.update', 'Actualizar', 'm
 INSERT INTO `permissions` VALUES ('34', 'tipovehiculo.list', 'Listar', 'tipovehiculo', 'web', '2021-08-26 00:11:54', '2021-08-26 00:11:54');
 INSERT INTO `permissions` VALUES ('35', 'tipovehiculo.create', 'Crear', 'tipovehiculo', 'web', '2021-08-26 00:12:11', '2021-08-26 00:12:11');
 INSERT INTO `permissions` VALUES ('36', 'tipovehiculo.update', 'Actualizar', 'tipovehiculo', 'web', '2021-08-26 00:12:29', '2021-08-26 00:12:29');
+INSERT INTO `permissions` VALUES ('37', 'almacen.create', 'Crear', 'almacen', 'web', '2021-08-26 15:05:50', '2021-08-26 15:09:13');
+INSERT INTO `permissions` VALUES ('38', 'almacen.update', 'Actualizar', 'almacen', 'web', '2021-08-26 15:08:59', '2021-08-26 15:08:59');
 
 -- ----------------------------
 -- Table structure for procedencias
@@ -264,6 +315,43 @@ CREATE TABLE `procedencias` (
 -- ----------------------------
 INSERT INTO `procedencias` VALUES ('1', 'Procedencia 1', '2021-08-25 23:38:38', '2021-08-25 23:39:46');
 INSERT INTO `procedencias` VALUES ('2', 'Procedencia 2', '2021-08-25 23:40:07', '2021-08-25 23:40:07');
+
+-- ----------------------------
+-- Table structure for producto_variaciones
+-- ----------------------------
+DROP TABLE IF EXISTS `producto_variaciones`;
+CREATE TABLE `producto_variaciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `producto_id` int(11) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of producto_variaciones
+-- ----------------------------
+INSERT INTO `producto_variaciones` VALUES ('1', '2', 'Hass', '2021-08-26 12:06:54', '2021-08-26 12:06:57');
+
+-- ----------------------------
+-- Table structure for productos
+-- ----------------------------
+DROP TABLE IF EXISTS `productos`;
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_form` int(11) DEFAULT 1,
+  `nombre` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of productos
+-- ----------------------------
+INSERT INTO `productos` VALUES ('1', '1', 'Espárragos Verde Frreso', '2021-08-26 12:06:02', '2021-08-26 12:06:07');
+INSERT INTO `productos` VALUES ('2', '1', 'Paltas', '2021-08-26 12:06:30', '2021-08-26 12:06:34');
 
 -- ----------------------------
 -- Table structure for proveedores
@@ -359,6 +447,8 @@ INSERT INTO `role_has_permissions` VALUES ('33', '1');
 INSERT INTO `role_has_permissions` VALUES ('34', '1');
 INSERT INTO `role_has_permissions` VALUES ('35', '1');
 INSERT INTO `role_has_permissions` VALUES ('36', '1');
+INSERT INTO `role_has_permissions` VALUES ('37', '1');
+INSERT INTO `role_has_permissions` VALUES ('38', '1');
 
 -- ----------------------------
 -- Table structure for roles
@@ -427,8 +517,8 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', '3', 'Admin', null, '1', 'ecasimiro@amconsultores.com.pe', 'Edwuin Casimiro', '10676542', '$2y$10$M8m0ivL.uoOYaihtOif3w.J5RBtwBtXYtWIcE0VecVtNgVnJksOya', '1', null, 'profile_usuario/Ltzdw1eIHbDD191Xb2RhUvePD9VL4MfyJKb6lP50.png', '2021-07-28 20:11:22', '2021-08-23 18:01:38');
-INSERT INTO `users` VALUES ('2', '1', '1', 'Edwuin Casimiro Calle', '987654323', '1', 'ejemplo@gmailcom', 'admin', '12345678', '$2y$10$R3PSawQm3CMRsHNQeqV/OeQ5YhMKt.UsZJr9mRApdN7wWTqWgjdF.', '1', null, 'profile_usuario/PzVbiFIGLWx6uWawzXn0u71IVfr2aUCmrcVPZg5o.jpg', '2021-08-04 15:19:27', '2021-08-24 04:14:36');
-INSERT INTO `users` VALUES ('3', '5', '4', 'Admin', '123', null, 'admin@test.com', 'test1', null, '$2y$10$.oZv6OfPtAPNzyR.QndQQutw4Kv/mYo60LpvxrOOMLA4LliM3F1Fm', '1', null, null, '2021-08-15 19:17:50', '2021-08-15 19:17:50');
-INSERT INTO `users` VALUES ('4', '5', '8', 'dev', '123', null, 'gabrieljg242@gmail.com', 'dev', '123', '$2y$10$dPRwlWyVVO8X6fiqgG0mHehigrYaxwGFl2GqdOiakQi2/6wrbTiHa', '1', null, 'profile_usuario/YkTS3J9tLv54DUxwgnyYW5k3dAERIDdZrJGK7AVN.png', '2021-08-20 12:44:53', '2021-08-22 19:17:14');
+INSERT INTO `users` VALUES ('1', '1', '1', 'Admin', null, '1', 'ecasimiro@amconsultores.com.pe', 'Edwuin Casimiro', '10676542', '$2y$10$M8m0ivL.uoOYaihtOif3w.J5RBtwBtXYtWIcE0VecVtNgVnJksOya', '1', null, 'profile_usuario/L6W3ppLPnZyIZUqtVWYVIj58l4VXfOXgmXz8MPRJ.jpg', '2021-07-28 20:11:22', '2021-08-26 18:13:01');
+INSERT INTO `users` VALUES ('2', '1', '1', 'Edwuin Casimiro Calle', '987654323', '1', 'ejemplo@gmailcom', 'administrador general del sistema', '12345678', '$2y$10$9TEnI/g4o8sSji2EfET.3uGyLLCP4f.O3N2HpteHYUHosu6ops0cG', '1', null, 'profile_usuario/PzVbiFIGLWx6uWawzXn0u71IVfr2aUCmrcVPZg5o.jpg', '2021-08-04 15:19:27', '2021-08-26 17:54:44');
+INSERT INTO `users` VALUES ('3', '5', '7', 'Admin', '123', null, 'admin@test.com', 'test1', null, '$2y$10$.oZv6OfPtAPNzyR.QndQQutw4Kv/mYo60LpvxrOOMLA4LliM3F1Fm', '1', null, 'profile_usuario/9jOfJPSMLBvvfhnZuEgnFp99c690yVEsomHwQBcp.jpg', '2021-08-15 19:17:50', '2021-08-26 18:13:39');
+INSERT INTO `users` VALUES ('4', '3', '9', 'dev', '123', null, 'gabrieljg242@gmail.com', 'dev', '123', '$2y$10$dPRwlWyVVO8X6fiqgG0mHehigrYaxwGFl2GqdOiakQi2/6wrbTiHa', '1', null, 'profile_usuario/U6Z1pmblqTIR7hgOokbanOpfNt3ZP1yHfp6hwfqd.jpg', '2021-08-20 12:44:53', '2021-08-26 18:14:24');
 INSERT INTO `users` VALUES ('5', '4', '6', 'Edwuin 2', null, null, null, 'ecasimiro@amconsultores.com.pe', null, '$2y$10$TpPpJ11BDJdaENYbXOjJXeAcnC1p6MZSyx1.IJxwdgYWPRsuLvxty', '1', null, 'profile_usuario/ZIMUWZLiEI6UsA9Z0B1PsU03ukdMJyq62lIAgydx.jpg', '2021-08-23 20:42:00', '2021-08-23 20:42:01');

@@ -4,15 +4,15 @@
 
 $breadcrumbs = array(
     '0' => array('nombre' => 'Inicio', 'link' => '/' , 'active' => ''),
-    '1' => array('nombre' => 'Módulo de Tipo Vehiculo', 'link' => 'tipovehiculo' , 'active' => ''),
-    '2' => array('nombre' => 'Detalle Datos Tipo Vehiculo', 'link' => '' , 'active' => true)
+    '1' => array('nombre' => 'Módulo de Tipo Vehículo', 'link' => 'tipovehiculo' , 'active' => ''),
+    '2' => array('nombre' => 'Detalle Datos Tipo Vehículo', 'link' => '' , 'active' => true)
 );
 
 @endphp
 
-@section('title', 'Detalle Datos Tipo Vehiculo')
+@section('title', 'Detalle Datos Tipo Vehículo')
 
-@section('pageHeader','Detalle Datos Tipo Vehiculo')
+@section('pageHeader','Detalle Datos Tipo Vehículo')
 
 @section('content')
 <div class="row">
@@ -20,7 +20,7 @@ $breadcrumbs = array(
         <div class="panel panel-inverse">
             <!-- begin panel-heading -->
             <div class="panel-heading">
-                <h4 class="panel-title">Datos Tipo Vehiculo</h4>
+                <h4 class="panel-title">Datos Tipo Vehículo</h4>
                 <div class="panel-heading-btn">
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>

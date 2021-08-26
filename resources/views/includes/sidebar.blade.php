@@ -67,7 +67,7 @@
             @endcan
 
             @canany(['almacen.list'])
-            <li class="">
+            <li class="{{ Request::is('almacen*') ? 'active' : '' }}">
                 <a href="{{ url('almacen') }}">
                     <i class='fa fa-truck'></i>
                     <span>Almacén</span>

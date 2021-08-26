@@ -45,4 +45,9 @@ class ClienteController extends Controller
     public function pedidos($id){
     	return view('clientes.pedidos');
     }
+
+    public function apiGetCliente($id){
+        $cliente = Cliente::findOrFail($id);
+        return json_encode(array('status' => 1, 'data' => $cliente));
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Area;
+use App\Almaceningreso;
 
 class AreaController extends Controller
 {

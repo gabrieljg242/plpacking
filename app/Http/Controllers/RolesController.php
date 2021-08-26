@@ -36,9 +36,11 @@ class RolesController extends Controller
     
     public function edit($id)
     {
-        $id = decrypt($id);
-        $roles = Role::findOrFail($id);
-        $permissions = Permission::all();
+        $id         = decrypt($id);
+        $roles      = Role::findOrFail($id);
+         $permissions = DB::table('permissions')
+                ->orderBy('module')
+                ->get(); 
         return view('roles.edit', compact('roles','permissions'));
     }
 
