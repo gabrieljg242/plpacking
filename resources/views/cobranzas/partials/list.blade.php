@@ -8,10 +8,13 @@
         <th width="10%">Item</th>
         <th width="25%">Razón Social</th>
         <th width="25%">Fecha Ingreso Cliente</th>
-        <th width="20%">Tipo Empresa</th>
-        <th width="20%">Rubro</th>
         <th width="20%">Zona</th>
-        <th width="20%">Coberturable</th>
+        <th width="20%">Numero Factura</th>
+        <th width="20%">fecha Facturacion</th>
+        <th width="20%">Dias Vencidos</th>
+        <th width="20%">Monto Facturado</th>
+        <th width="20%">Monto cobrado</th>
+        <th width="20%">monto saldo</th>
         <th width="20%">Opciones</th>        
     </thead>
     <tbody>
@@ -19,14 +22,18 @@
             <td>01</td>
             <td>AGRICOLA SAN MIGUEL DE PIURA</td>
             <td>12 Diciembre 2020</td>
-            <td>Juridica</td>
-            <td>Agroexportadora</td>
             <td>Piura</td>
-            <td>Si</td>
+            <td><strong>E001-89</strong></td>
+            <td>28 Marzo 2021</td>
+            <td><span class="pull-right badge bg-red">17 DIAS</span></td>
+            <td>US$ 2,500.00</td>
+            <td>US$ 1,500.00</td>
+            <td>US$ 1,000.00</td>
             <td>
                 <a href="{{ route('cobranzas.show', encrypt(1)) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fas fa-eye fa-fw"></i></a>
             </td>
         </tr>
+        
     </tbody>
 </table>
 
