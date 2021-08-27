@@ -9,7 +9,7 @@
         <th width="25%">Razón Social</th>
         <th width="10%">Cód. Cliente</th>
         <th width="20%">Rubro</th>
-        <th width="20%">Ubucación</th>
+        <th width="20%">Dirección</th>
         <th width="35%">Fecha registro de cliente</th>
         <th width="20%">Opciones</th>        
     </thead>

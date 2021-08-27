@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		         <div class="form-group">
-		             {!! Form::label('status', 'Estatus') !!}
+		             {!! Form::label('status', 'Estado') !!}
 		             {{ Form::select('status',[1 => 'Activo', 0 => 'Desactivado'], null , ['class' => 'form-control']) }}
 		         </div>
 		    </div>

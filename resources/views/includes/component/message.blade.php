@@ -3,7 +3,7 @@
 		@if(session()->has('message'))
 			<div class="alert alert-info fade show m-b-10" id="notificacion-alert">
 				<span class="close" data-dismiss="alert">×</span>
-				{{ session()->get('message') }}
+				<b>{{ session()->get('message') }}</b>
 			</div>
 		@endif
 

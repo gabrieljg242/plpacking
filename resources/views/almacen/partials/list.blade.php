@@ -11,8 +11,8 @@
         <th width="20%">Procedencia</th>
         <th width="20%">Producto</th>
         <th width="35%">Cliente</th>
-        <th width="20%">Número de Guía</th>      
-        <th width="20%">Código Trazabilidad</th> 
+        <th width="20%">Nro. de Guía</th>      
+        <th width="20%">Cod. Trazabilidad</th> 
         <th width="20%">Nro. Jaba</th> 
         <th width="20%">Peso Guía</th> 
         <th width="20%">Peso Planta</th> 

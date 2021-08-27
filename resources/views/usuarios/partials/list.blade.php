@@ -20,7 +20,7 @@
                 <td>{{ $usuario->getRoleNames()[0] }}</td>
                 <td>{{ isset($usuario->areas->nombre) ? $usuario->areas->nombre : '' }}</td>
                 <td>{{ isset($usuario->cargos->nombre) ? $usuario->cargos->nombre : '' }}</td>
-                <td class="text-center text-white {{ ($usuario->status == 1 ? 'bg-success' : 'bg-danger') }}">{{ ($usuario->status == 1 ? 'Activo' : 'Desactivado') }}</td>
+                <td class="text-center">{{ ($usuario->status == 1 ? 'Activo' : 'Desactivado') }}</td>
                 <td class="text-center">
                     @can('user.update')
                         <a href="{{ URL::action('UsersController@edit',encrypt($usuario->id)) }}">

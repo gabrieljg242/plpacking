@@ -11,7 +11,7 @@
 	$(document).ready(function(){
 		setTimeout(() => {
 			$('#notificacion-alert').remove();
-		}, 3000);
+		}, 8000);
 	});
 
 </script>

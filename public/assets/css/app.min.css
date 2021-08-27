@@ -16736,9 +16736,20 @@ a:focus {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #dee2e6;
+  background: #00000073;
   z-index: 9999;
 }
+
+#page-loader .text-loader{
+	position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 53%;
+    font-size: 25px;
+    color: #FFF;
+}
+    
 
 #page-loader.fade {
   display: none;

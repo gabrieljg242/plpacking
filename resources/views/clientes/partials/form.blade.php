@@ -2,18 +2,29 @@
 
 <div class="row">
     <div class="col-md-4">
-       <h6>* Tipo</h6>
-       {!! Form::label('tipo_nacionalidad', 'Nacional') !!}
-       {!! Form::radio('tipo_nacionalidad', '1', true) !!}
-       {!! Form::label('tipo_nacionalidad', 'Extranjero') !!}
-       {!! Form::radio('tipo_nacionalidad', '2') !!}
 
-       <h6 class="mt-2">* Tipo de Cliente</h6>
-       {!! Form::label('tipo_cliente', 'Empresa Juridíca') !!}
-       {!! Form::radio('tipo_cliente', '1', true) !!}
-       {!! Form::label('tipo_cliente', 'Persona Natural') !!}
-       {!! Form::radio('tipo_cliente', '2') !!}
+        <div class="row">
+            <div class="col-md-12 mb-2">
+                <label for="">* Tipo</label>
+                <br>
+                {!! Form::label('tipo_nacionalidad', 'Nacional') !!}
+                {!! Form::radio('tipo_nacionalidad', '1', true) !!}
+                {!! Form::label('tipo_nacionalidad', 'Extranjero',['class' =>'ml-3']) !!}
+                {!! Form::radio('tipo_nacionalidad', '2') !!}
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-12 mb-2">
+                <label for="">* Tipo de Cliente</label>
+                <br>
+                {!! Form::label('tipo_cliente', 'Empresa Juridíca') !!}
+                {!! Form::radio('tipo_cliente', '1', true) !!}
+                {!! Form::label('tipo_cliente', 'Persona Natural',['class' =>'ml-3']) !!}
+                {!! Form::radio('tipo_cliente', '2') !!}
+            </div>
+        </div>
+       
     </div>
     <div class="col-md-8">
         <div class="row">

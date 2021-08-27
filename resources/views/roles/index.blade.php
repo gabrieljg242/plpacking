@@ -4,7 +4,8 @@
 
     $breadcrumbs = array(
         '0' => array('nombre' => 'Inicio', 'link' => '/' , 'active' => ''),
-        '1' => array('nombre' => 'Módulo Roles', 'link' => '' , 'active' => true)
+        '1' => array('nombre' => 'Módulo de Usuarios', 'link' => '/usuarios' , 'active' => ''),
+        '2' => array('nombre' => 'Módulo Roles', 'link' => '' , 'active' => true)
     );
 
 @endphp
